@@ -1,4 +1,4 @@
-Member1 name:        email:        utorid:
+Member1 name: Youssef Shahin email:youssef.shahin@mail.urotoronto.ca utorid:shahiny2
 Member2 name:        email:        utorid:
 Member3 name:        email:        utorid:
 Member4 name:        email:        utorid:
