@@ -1,4 +1,4 @@
 Member1 name: Youssef Shahin email:youssef.shahin@mail.urotoronto.ca utorid:shahiny2
 Member2 name: Adit Krishnan        email: adit.krishnan@mail.utoronto.ca       utorid: krish299
-Member3 name:        email:        utorid:
+Member3 name: Daniel Perevalov       email: daniel.perevalov@mail.utoronto.ca        utorid: pereval4
 Member4 name:        email:        utorid:
