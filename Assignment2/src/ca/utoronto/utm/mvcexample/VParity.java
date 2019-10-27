@@ -1,8 +1,7 @@
 package ca.utoronto.utm.mvcexample;
 
-import ca.utoronto.utm.util.*;
-
-
+import ca.utoronto.utm.util.Observable;
+import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.Label;
 
 public class VParity extends Label implements Observer {

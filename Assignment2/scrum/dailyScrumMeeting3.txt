@@ -1,55 +1,55 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Daniel Perevalov  email: daniel.perevalov@mail.utoronto.ca  utorid: pereval4  
 
 Oct 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 18,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 19,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 20,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 21,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 22,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 23,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Setup Java 11 with JavaFX 11 and get MVCApplication to run.
+	Obstacles I face: Setting up Java 11 with JavaFX 11 is kind of annoying. 
 
 Oct 24,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Setup and run MVCApplication and OthelloControllerHumanVSHuman.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 25,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Nothing.
+	Obstacles I face: None.
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing.
+	What I will do today: Move BUG 0.03 and complete it.
+	Obstacles I face: None.
 
 Oct 27,2019
 	What I did yesterday:

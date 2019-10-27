@@ -1,6 +1,6 @@
 package ca.utoronto.utm.mvcexample;
 
-import ca.utoronto.utm.util.*;
+import ca.utoronto.utm.util.Observable;
 
 /**
  * Model a counter, with increment and decrement.

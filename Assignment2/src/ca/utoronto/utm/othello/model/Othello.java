@@ -1,5 +1,4 @@
 package ca.utoronto.utm.othello.model;
-import ca.utoronto.utm.util.*;
 import java.util.Random;
 
 /**
