@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name:  Youssef    email: youssef.shahin@mail.utoronto.ca     utorid: shahiny2   
 
 Oct 17,2019
 	What I did yesterday:
@@ -27,29 +27,30 @@ Oct 21,2019
 	Obstacles I face:
 
 Oct 22,2019
-	What I did yesterday:
+	What I did yesterday: assignment released today
 	What I will do today:
 	Obstacles I face:
 
 Oct 23,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: 
+	What I will do today: Accessed the repo and added name to memebers.txt
 	Obstacles I face:
 
 Oct 24,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: added name to members
+	What I will do today: study for my 3 midterms this week
 	Obstacles I face:
 
 Oct 25,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: studied
+	What I will do today: get info from my teammates and make a group chat to communicate
+	Obstacles I face: only 3 members added info no 4th member 
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: got connected with teammates
+	What I will do today: understand eveything going on with this assignment
+	Obstacles I face: setting up Java 11, and javafx, and understanding all the new apps and ways of 
+	doing things that this project has to offer
 
 Oct 27,2019
 	What I did yesterday:
