@@ -12,8 +12,4 @@ OWNER    :
 PRIORITY : 1
 ESTIMATE : 2 hours    ACTUAL : 2 hours
 ISSUE    : Member 3
-- demonstrates that they have added, committed and pushed members.txt. 
-- demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
-- demonstrates that they can run MVCApplication on their dev platform
---------------------------------------------------------------------------
 --------------------------------------------------------------------------

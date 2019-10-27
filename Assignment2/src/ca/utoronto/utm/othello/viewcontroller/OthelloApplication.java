@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put 
-	// --module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
+	//	 --module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
 	// in the run configuration under VM arguments.
 	// You can import the JavaFX.prototype launch configuration and use it as well.
 	

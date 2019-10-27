@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Adit Krishnan     email: adit.krishnan@mail.utoronto.ca    utorid: krish299
 
 Oct 17,2019
 	What I did yesterday:
@@ -47,9 +47,9 @@ Oct 25,2019
 	Obstacles I face:
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Coordinated with team mates to create a groupchat to discuss our project
+	What I will do today: Set up my environment
+	Obstacles I face: Fully understanding Agile methodology
 
 Oct 27,2019
 	What I did yesterday:
