@@ -4,3 +4,15 @@
 
 # Sprint 1 Oct 20-Oct 26, 2019
 # Sprint 1 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+TYPE     : BUG 0.01 : UTORID : krish299 STATUS : Complete 
+NAME     : Configure and use system
+OWNER    : adit 
+PRIORITY : 1
+ESTIMATE : 2 Hours    ACTUAL :  4 Hours
+ISSUE    : Ensure that Eclipse is configured to successfully run the program
+- demonstrates that they have added, committed and pushed members.txt. 
+- demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
+- demonstrates that they can run MVCApplication on their dev platform
+--------------------------------------------------------------------------
