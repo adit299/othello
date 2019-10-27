@@ -28,3 +28,18 @@ ISSUE    : getting rid of the java 11 stuff and understanding that that was the 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.011 : UTORID : krish299 STATUS : InProgress 
+NAME     : OthelloGUI Buttons Active, Console View
+OWNER    : adit
+PRIORITY : 1
+ESTIMATE : 4 days    ACTUAL :  
+ISSUE    : The users can now use the OthelloGUI created in US1.01 
+for Human vs Human play. Now when the user clicks a button, the resulting
+board is printed on the console. This basically replaces the keyboard
+in the old HumanVSHuman game, but the output is still on the console.
+
+NOTE: Make sure that you are using good MVC principles in implementing this.
+If you didn't then file BUG 1.012 to fix the implementation.
+--------------------------------------------------------------------------
