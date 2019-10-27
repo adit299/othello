@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Daniel Perevalov     email: daniel.perevalov@mail.utoronto.ca     utorid: pereval4   
 
 Oct 17,2019
 	What I did yesterday:
@@ -42,14 +42,14 @@ Oct 24,2019
 	Obstacles I face:
 
 Oct 25,2019
-	What I did yesterday:
+	What I did yesterday: 
 	What I will do today:
 	Obstacles I face:
 
 Oct 26,2019
-	What I did yesterday: 
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on setting up Java11 and JavaFX 11
+	What I will do today: Run MVCApplication and contact teamates, also do the scrum meeting
+	Obstacles I face: none
 
 Oct 27,2019
 	What I did yesterday:
