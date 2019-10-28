@@ -52,14 +52,14 @@ Oct 26,2019
 	Obstacles I face: None.
 
 Oct 27,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Moved BUG 0.03 and completed it.
+	What I will do today: Worked on UserStory1.01
+	Obstacles I face: Implementing MVC in terms of OthelloApplication, tough to wrap head around all of the components. 
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on UserStory1.01
+	What I will do today: Finish UserStory1.01 and test it.
+	Obstacles I face: Figuring out how to use labels and gridpane.
 
 Oct 29,2019
 	What I did yesterday:
