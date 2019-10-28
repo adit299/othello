@@ -9,7 +9,7 @@ TYPE     : USER STORY 1.01 : pereval4 : InProgress :
 NAME     : OthelloGUI Click Registration
 OWNER    : Daniel Perevalov
 PRIORITY : 1
-ESTIMATE : 2 days    ACTUAL :  
+ESTIMATE : 2 days    ACTUAL : 2 days
 ISSUE    : User can now click on an 8x8 grid of buttons used by the 
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.
