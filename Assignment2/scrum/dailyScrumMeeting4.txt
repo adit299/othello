@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name:   Shane Chen   email: shane.chen@utoronto.ca    utorid:   chens224
 
 Oct 17,2019
 	What I did yesterday:
@@ -57,9 +57,9 @@ Oct 27,2019
 	Obstacles I face:
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:nothing
+	What I will do today: set up environment, get branch working
+	Obstacles I face: i didnt go to class so i am going to review class notes for a few hours
 
 Oct 29,2019
 	What I did yesterday:
