@@ -21,9 +21,15 @@ public class OthelloObserver implements EventHandler<ActionEvent>  {
 		this.lab.setText(((Button)event.getSource()).getId());
 		System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
 		if(othello.move(row(event), col(event))) {
+			if (!(othello.isGameOver())) {
 			System.out.println("makes move ("+row(event)+","+col(event)+")");
 			System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
-		}	
+			}
+			else {
+				String s = othello.getBoardString() + othello.getWinner() + " won\n";
+				System.out.println(s);
+			}
+		}
 	}
 	
 	public int row (ActionEvent event) {

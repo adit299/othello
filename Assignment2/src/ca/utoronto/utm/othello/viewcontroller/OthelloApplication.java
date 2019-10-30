@@ -61,7 +61,6 @@ public class OthelloApplication extends Application {
 
 	public static void main(String[] args) {
 		OthelloApplication view = new OthelloApplication();
-		Othello othello=new Othello();
 		launch(args);
 	}
 }
