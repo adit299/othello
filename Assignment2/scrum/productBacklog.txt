@@ -23,17 +23,7 @@ ISSUE    : Member 2
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG 0.04 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
-NAME     : Configure and use system
-OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : Member 4
-- demonstrates that they have added, committed and pushed members.txt. 
-- demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
-- demonstrates that they can run MVCApplication on their dev platform
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Click Registration

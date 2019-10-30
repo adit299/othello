@@ -62,9 +62,9 @@ Oct 28,2019
 	Obstacles I face: i didnt go to class so i am going to review class notes for a few hours
 
 Oct 29,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:set up java 11, reviewed lectures
+	What I will do today: finish bug0.04, get javafx working
+	Obstacles I face: time
 
 Oct 30,2019
 	What I did yesterday:

@@ -1,5 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.OthelloControllerHumanVSHuman;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -17,7 +18,7 @@ public class OthelloApplication extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		// Create and hook up the Model, View and the controller
-		CButtonPressEventHandler cbhandler;
+		OthelloObserver cbhandler;
 		
 		// MODEL
 		Othello othello=new Othello();
@@ -35,11 +36,12 @@ public class OthelloApplication extends Application {
 		
 		Label lab = new Label();
 		grid.add(lab, 0, 8);
-		cbhandler = new CButtonPressEventHandler(lab);
+		cbhandler = new OthelloObserver(lab);
 		
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
 				Button but = new Button(" ");
+				but.setText(String.valueOf(othello.getToken(row, col)));
 				but.setId(String.valueOf(row) + ',' + String.valueOf(col));
 				but.setOnAction(cbhandler);
 				grid.add(but, col, row);
