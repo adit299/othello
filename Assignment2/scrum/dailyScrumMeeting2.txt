@@ -52,18 +52,18 @@ Oct 26,2019
 	Obstacles I face: Fully understanding Agile methodology
 
 Oct 27,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: 
+	What I will do today:Nothing
+	Obstacles I face: busy
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: 
+	What I will do today: waiting for others to finish their story so i can do mine
 	Obstacles I face:
 
 Oct 29,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: 
+	What I will do today: nothing
 	Obstacles I face:
 
 Oct 30,2019

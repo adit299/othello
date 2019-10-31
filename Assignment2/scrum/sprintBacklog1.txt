@@ -17,6 +17,17 @@ ISSUE    : getting rid of the java 11 stuff and understanding that that was the 
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG 0.04 : UTORID : STATUS : Complete
+NAME     : Configure and use system
+OWNER    : Shane Chen
+PRIORITY : 1
+ESTIMATE : 2 Hours    ACTUAL :  1 day lol
+ISSUE    : Didnt properly switch from java 8 to java 11, i looked online for ideas but they would talk about modular stuff and i didnt understand
+- demonstrates that they have added, committed and pushed members.txt. 
+- demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
+- demonstrates that they can run MVCApplication on their dev platform
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY 1.011 : UTORID : krish299 STATUS : InProgress 
 NAME     : OthelloGUI Buttons Active, Console View
 OWNER    : adit
