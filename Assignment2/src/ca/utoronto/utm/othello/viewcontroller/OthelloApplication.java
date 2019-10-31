@@ -1,6 +1,5 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.othello.model.Othello;
-import ca.utoronto.utm.othello.model.OthelloControllerHumanVSHuman;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
