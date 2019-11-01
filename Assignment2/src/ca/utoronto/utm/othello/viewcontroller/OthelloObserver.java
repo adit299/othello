@@ -19,26 +19,32 @@ public class OthelloObserver implements EventHandler<ActionEvent>  {
 	@Override
 	public void handle(ActionEvent event) {
 		this.lab.setText(((Button)event.getSource()).getId());
-		System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
-		if(othello.move(row(event), col(event))) {
+		int row = ((Button)event.getSource()).getId().charAt(0) - 48;
+		int col = ((Button)event.getSource()).getId().charAt(2) - 48;
+//		System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
+		if(othello.move(row, col)) {
 			if (!(othello.isGameOver())) {
-			System.out.println("makes move ("+row(event)+","+col(event)+")");
-			System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
+			((Button)event.getSource()).setText(String.valueOf(othello.getToken(row, col)));
+//			System.out.println("makes move ("+row+","+col+")");
+//			System.out.println(othello.getBoardString()+ othello.getWhosTurn()+" moves next");
+//				if (((Button)event.getSource()).getId() == String.valueOf(row(event)) + ',' + String.valueOf(col(event))) {
+//					
+//				}
 			}
-			else {
-				String s = othello.getBoardString() + othello.getWinner() + " won\n";
-				System.out.println(s);
-			}
+//			else {
+//				String s = othello.getBoardString() + othello.getWinner() + " won\n";
+//				System.out.println(s);
+//			}
 		}
 	}
 	
-	public int row (ActionEvent event) {
-		return ((Button)event.getSource()).getId().charAt(0) - 48;
-	}
-	
-	public int col (ActionEvent event) {
-		return ((Button)event.getSource()).getId().charAt(2) - 48;
-	}
+//	public int row (ActionEvent event) {
+//		return ((Button)event.getSource()).getId().charAt(0) - 48;
+//	}
+//	
+//	public int col (ActionEvent event) {
+//		return ((Button)event.getSource()).getId().charAt(2) - 48;
+//	}
 	
 }
 

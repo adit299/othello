@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -16,49 +15,44 @@ public class OthelloApplication extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-		// Create and hook up the Model, View and the controller
-		OthelloObserver cbhandler;
-		
 		// MODEL
-		Othello othello=new Othello();
+		MOthello mothello= new MOthello();
+		
+		//GAME
+		Othello othello = new Othello();
 		
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
-	
-		// VIEW
-		// VIEW->CONTROLLER hookup
-		// MODEL->VIEW hookup
+		COthello cothello=new COthello(mothello, othello);
 		
-		// VIEW COMPONENTS
+		// VIEW COMPONENTS && VIEW LAYOUT
+		VOthello vothello = new VOthello();
 		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(5));
+		grid.setPadding(new Insets(2,2,2,2));
 		
-		Label lab = new Label();
-		grid.add(lab, 0, 8);
-		cbhandler = new OthelloObserver(lab);
-		
-		for (int row = 0; row < 8; row++) {
-			for (int col = 0; col < 8; col++) {
-				Button but = new Button(" ");
-				but.setText(String.valueOf(othello.getToken(row, col)));
-				but.setId(String.valueOf(row) + ',' + String.valueOf(col));
-				but.setOnAction(cbhandler);
-				grid.add(but, col, row);
-			}
+		for (Button button : vothello.getButtons()) {
+			grid.add(button, button.getId().charAt(2), button.getId().charAt(0));
+			button.setOnAction(cothello);
+			button.setMaxWidth(200);
 		}
 		
+		grid.add(vothello.getLabel(), 0, 8);
 		
 		// SCENE
 		Scene scene = new Scene(grid); 
 		stage.setTitle("Othello");
 		stage.setScene(scene);
-				
+		
+		// VIEW
+		// VIEW->CONTROLLER hookup
+		// MODEL->VIEW hookup
+		mothello.attach(vothello);
+		
 		// LAUNCH THE GUI
 		stage.show();
 	}
 
 	public static void main(String[] args) {
-		OthelloApplication view = new OthelloApplication();
 		launch(args);
 	}
 }

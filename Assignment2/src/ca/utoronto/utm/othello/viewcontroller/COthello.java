@@ -17,8 +17,8 @@ public class COthello implements EventHandler<ActionEvent>  {
 	public void handle(ActionEvent event) {
 		int row = ((Button)event.getSource()).getId().charAt(0) - 48;
 		int col = ((Button)event.getSource()).getId().charAt(2) - 48;
-		if(othello.move(row, col)) {
-			if (!(othello.isGameOver())) {
+		if(this.othello.move(row, col)) {
+			if (!(this.othello.isGameOver())) {
 				mothello.player(this.othello, ((Button)event.getSource()).getId());
 			}
 			else {

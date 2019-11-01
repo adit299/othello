@@ -1,7 +1,6 @@
 package ca.utoronto.utm.mvcexample;
 
 import ca.utoronto.utm.util.Observable;
-
 import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.Label;
 
