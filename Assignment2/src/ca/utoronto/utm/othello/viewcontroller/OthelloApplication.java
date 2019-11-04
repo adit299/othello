@@ -33,7 +33,10 @@ public class OthelloApplication extends Application {
 		for (Button button : vothello.getButtons()) {
 			grid.add(button, button.getId().charAt(2), button.getId().charAt(0));
 			button.setOnAction(cothello);
-			button.setMaxWidth(200);
+			button.setMinWidth(50);
+			button.setPrefWidth(50);
+			button.setMaxWidth(50);
+
 		}
 		
 		grid.add(vothello.getLabel(), 0, 8);
