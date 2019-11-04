@@ -28,7 +28,7 @@ ISSUE    : Didnt properly switch from java 8 to java 11, i looked online for ide
 - demonstrates that they can run MVCApplication on their dev platform
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.011 : UTORID : krish299 STATUS : InProgress 
+TYPE     : USER STORY 1.011 : UTORID : krish299 STATUS : Complete
 NAME     : OthelloGUI Buttons Active, Console View
 OWNER    : adit
 PRIORITY : 1

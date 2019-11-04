@@ -52,44 +52,44 @@ Oct 26,2019
 	Obstacles I face: Fully understanding Agile methodology
 
 Oct 27,2019
-	What I did yesterday: 
-	What I will do today:Nothing
+	What I did yesterday: Fully set up my environment
+	What I will do today: Didn't get a chance to work today
 	Obstacles I face: busy
 
 Oct 28,2019
-	What I did yesterday: 
+	What I did yesterday: Study for other midterms!
 	What I will do today: waiting for others to finish their story so i can do mine
-	Obstacles I face:
+	Obstacles I face: Time management
 
 Oct 29,2019
-	What I did yesterday: 
-	What I will do today: nothing
-	Obstacles I face:
+	What I did yesterday: Finished my midterm
+	What I will do today: Start working on US1.01
+	Obstacles I face: Lot of stuff to do, so little time
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finsihed Us1.01
+	What I will do today: Study for csc207 midterm
+	Obstacles I face: Same obstacle, a lot of midterms
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: study for csc207
+	What I will do today: study for csc207
+	Obstacles I face: don't wanna fail the midterm
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: prolly did really bad on the midterm :(
+	What I will do today: coordinate with team
+	Obstacles I face: im not the brightest unfortunately
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Start assigning user stories for sprint 2
+	What I will do today: Start working on my assigned user story
+	Obstacles I face: Have to review over all the Observer/observable methods
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Studied for mat202, csc236
+	What I will do today: keep working on my assignmed user story
+	Obstacles I face: unresponsive teammates
 
 Nov 4,2019
 	What I did yesterday:
