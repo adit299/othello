@@ -17,7 +17,7 @@ correctly showing the token of the next player to make a move.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.04 : UTORID : krish299 STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Token Counter
-OWNER    : 
+OWNER    : Adit
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When user play, the count for each player is on display. 
