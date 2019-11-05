@@ -7,9 +7,12 @@ import javafx.scene.control.Button;
 import java.util.ArrayList;
 
 public class VOthello implements Observer{
-
+	
 	private ArrayList<Button> buttons = new ArrayList<>();
-	private Label lab = new Label();
+	private Label winner = new Label();
+	private Label whosNext = new Label("Current Turn: X");
+	private Label playerCount = new Label("Player 1: 2 Player 2: 2");
+	private Label currentWinner = new Label("Tie");
 	
 	public VOthello() {
 		for (int row = 0; row < 8; row++) {
@@ -31,14 +34,29 @@ public class VOthello implements Observer{
 		return this.buttons;
 	}
 	
-	public Label getLabel() {
-		return this.lab;
+	public Label getWinner() {
+		return this.winner;
+	}
+	
+	public Label getWhosNext() {
+		return this.whosNext;
+	}
+	
+	public Label playerCount() {
+		return this.playerCount;
+	}
+	
+	public Label getCurrentWinner() {
+		return this.currentWinner;
 	}
 	
 	@Override
 	public void update(Observable o) {
 		MOthello mothello = (MOthello)o;
 		if (!mothello.gameOver) {
+			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
+			this.playerCount.setText(mothello.playerCount());
+			this.currentWinner.setText(mothello.currentWinner());
 			int row = mothello.getStart().charAt(0) - 48;
 			int col = mothello.getStart().charAt(2) - 48;
 			for (Button btn : this.buttons) {
@@ -51,7 +69,7 @@ public class VOthello implements Observer{
 			}
 		}
 		else if (mothello.gameOver) {
-			this.lab.setText("GAME OVER: " + "PLAYER " + mothello.getWin() + " WINS!");
+			this.winner.setText("GAME OVER: " + "PLAYER " + mothello.getWin() + " WINS!");
 		}
 	}
 	
