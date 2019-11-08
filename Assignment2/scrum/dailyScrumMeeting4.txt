@@ -67,49 +67,49 @@ Oct 29,2019
 	Obstacles I face: time
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: environment works
+	What I will do today: Study for 207 test
+	Obstacles I face:nothing
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Study for 207 test
+	What I will do today:Study for 207 test
+	Obstacles I face:nothing
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Study for 207 test
+	What I will do today: write 207 test
+	Obstacles I face: the test
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: write 207 test
+	What I will do today: nothing
+	Obstacles I face:nothing
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:nothing
+	What I will do today:nothing
+	Obstacles I face:nothing
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: nothing
+	What I will do today: Study for 256 and 223 test
+	Obstacles I face:nothing
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Study for 256 and 223 test
+	What I will do today:Study for 256 and 223 test
+	Obstacles I face:nothing
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Study for 256 and 223 test
+	What I will do today:Study for 256 and 223 test
+	Obstacles I face:nothing
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Study for 256 and 223 test
+	What I will do today: write both 256 and 223 tests
+	Obstacles I face:nothing
 
 Nov 8,2019
 	What I did yesterday:
