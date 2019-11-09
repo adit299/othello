@@ -3,6 +3,7 @@ import ca.utoronto.utm.othello.model.Othello;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.layout.TilePane;
 
 public class COthello implements EventHandler<ActionEvent>  {
 
@@ -17,13 +18,16 @@ public class COthello implements EventHandler<ActionEvent>  {
 	public void handle(ActionEvent event) {
 		int row = ((Button)event.getSource()).getId().charAt(0) - 48;
 		int col = ((Button)event.getSource()).getId().charAt(2) - 48;
-		if(this.othello.move(row, col)) {
-			if (!(this.othello.isGameOver())) {
+		if (!(this.othello.isGameOver())) {
+			if (((Button)event.getSource()).getParent() instanceof TilePane) {
+				mothello.cPlayer(this.othello, ((Button)event.getSource()).getText());
+			}
+			if (this.othello.move(row, col)) {
 				mothello.player(this.othello, ((Button)event.getSource()).getId());
 			}
-			else {
-				mothello.gameOver();
-			}
+		}
+		else {
+			mothello.gameOver();
 		}
 		
 	}

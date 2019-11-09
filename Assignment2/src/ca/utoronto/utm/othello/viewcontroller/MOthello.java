@@ -7,11 +7,22 @@ public class MOthello extends Observable {
 	
 	private Othello othello;
 	private String sCoord;
+	private String sText;
+	private boolean change = false;
 	protected boolean gameOver = false;
 	
 	public void player(Othello othello, String sCoord) { 
 		this.othello = othello;
+		if (sCoord != this.sCoord) {
+			this.change = true;
+		}
 		this.sCoord = sCoord;
+		this.notifyObservers();
+	}
+	
+	public void cPlayer(Othello othello, String sText) {
+		this.othello = othello;
+		this.sText = sText;
 		this.notifyObservers();
 	}
 	
@@ -28,6 +39,10 @@ public class MOthello extends Observable {
 		return this.sCoord;
 	}
 	
+	public String getSText() {
+		return this.sText;
+	}
+	
 	public char getWin() {
 		return this.othello.getWinner();
 	}
@@ -36,9 +51,13 @@ public class MOthello extends Observable {
 		return this.othello.getWhosTurn();
 	}
 	
+	public boolean getChange() {
+		return this.change;
+	}
+	
 	public String playerCount() {
 		String s = "";
-		s += "Player 1: " + this.othello.getCount(OthelloBoard.P1) + " " + "Player 2: " + this.othello.getCount(OthelloBoard.P2);
+		s += "Tokens (P1): " + this.othello.getCount(OthelloBoard.P1) + "    " + "Tokens (P2): " + this.othello.getCount(OthelloBoard.P2);
 		return s;
 	}
 	
