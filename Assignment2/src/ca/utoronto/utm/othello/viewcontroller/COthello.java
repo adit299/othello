@@ -14,19 +14,24 @@ public class COthello implements EventHandler<ActionEvent>  {
 	}
 	
 	@Override
-	public void handle(ActionEvent event) {
-		int row = ((Button)event.getSource()).getId().charAt(0) - 48;
-		int col = ((Button)event.getSource()).getId().charAt(2) - 48;
-		if(this.othello.move(row, col)) {
-			if (!(this.othello.isGameOver())) {
-				mothello.player(this.othello, ((Button)event.getSource()).getId());
+	public void handle(ActionEvent event) {//
+		String id = ((Button)event.getSource()).getId();
+		if (id.equals("hint")) {
+			if (!(this.othello.isGameOver()) && (this.mothello.hintAvailable())) {
+				mothello.updateHint();
 			}
-			else {
-				mothello.gameOver();
-			}
+		}else {
+			int row = id.charAt(0) - 48;
+			int col = id.charAt(2) - 48;
+			if(this.othello.move(row, col)) {
+				if (!(this.othello.isGameOver())) {
+					mothello.player(this.othello, ((Button)event.getSource()).getId());
+				}
+				else {
+					mothello.gameOver();
+				}
+			}			
 		}
-		
-	}
-	
+	}	
 }
 

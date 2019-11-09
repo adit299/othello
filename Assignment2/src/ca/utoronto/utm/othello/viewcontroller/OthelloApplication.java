@@ -15,11 +15,12 @@ public class OthelloApplication extends Application {
 	
 	@Override
 	public void start(Stage stage) throws Exception {
-		// MODEL
-		MOthello mothello= new MOthello();
 		
 		//GAME
 		Othello othello = new Othello();
+		
+		// MODEL
+		MOthello mothello= new MOthello();
 		
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
@@ -37,11 +38,14 @@ public class OthelloApplication extends Application {
 			button.setPrefWidth(50);
 			button.setMaxWidth(50);
 		}
+		vothello.getHintButton().setOnAction(cothello);
 		
 		grid.add(vothello.getWinner(), 0, 8);
 		grid.add(vothello.getWhosNext(), 0, 12);
 		grid.add(vothello.playerCount(), 0, 16);
 		grid.add(vothello.getCurrentWinner(), 0, 20);
+		grid.add(vothello.getHintButton(), 0, 24);//
+		grid.add(vothello.getHintLabel(), 0, 28);//
 		
 		// SCENE
 		Scene scene = new Scene(grid); 

@@ -9,12 +9,15 @@ import java.util.ArrayList;
 public class VOthello implements Observer{
 	
 	private ArrayList<Button> buttons = new ArrayList<>();
+	private Button hintButton = new Button("Hint");//
+	private Label hintLabel = new Label("No Hint First turn");//
 	private Label winner = new Label();
 	private Label whosNext = new Label("Current Turn: X");
 	private Label playerCount = new Label("Player 1: 2 Player 2: 2");
 	private Label currentWinner = new Label("Tie");
 	
 	public VOthello() {
+		hintButton.setId("hint");//
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
 				Button btn = new Button();
@@ -32,6 +35,14 @@ public class VOthello implements Observer{
 	
 	public ArrayList<Button> getButtons() {
 		return this.buttons;
+	}
+	
+	public Button getHintButton() {//
+		return this.hintButton;
+	}
+	
+	public Label getHintLabel() {//
+		return this.hintLabel;
 	}
 	
 	public Label getWinner() {
@@ -57,6 +68,8 @@ public class VOthello implements Observer{
 			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
 			this.playerCount.setText(mothello.playerCount());
 			this.currentWinner.setText(mothello.currentWinner());
+			this.hintLabel.setText(mothello.getHint());
+			
 			int row = mothello.getStart().charAt(0) - 48;
 			int col = mothello.getStart().charAt(2) - 48;
 			for (Button btn : this.buttons) {

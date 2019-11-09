@@ -7,11 +7,15 @@ public class MOthello extends Observable {
 	
 	private Othello othello;
 	private String sCoord;
+	private String hintCoord = "()";
+	private boolean hintAvailable = false;
 	protected boolean gameOver = false;
+	
 	
 	public void player(Othello othello, String sCoord) { 
 		this.othello = othello;
 		this.sCoord = sCoord;
+		this.hintAvailable = true;
 		this.notifyObservers();
 	}
 	
@@ -40,6 +44,20 @@ public class MOthello extends Observable {
 		String s = "";
 		s += "Player 1: " + this.othello.getCount(OthelloBoard.P1) + " " + "Player 2: " + this.othello.getCount(OthelloBoard.P2);
 		return s;
+	}
+	
+	public void updateHint() {//
+		this.hintCoord = this.othello.getHint();
+		this.hintAvailable = false;
+		this.notifyObservers();
+	}
+	
+	public String getHint() {//
+		return this.hintCoord;
+	}
+	
+	public boolean hintAvailable() {
+		return this.hintAvailable;
 	}
 	
 	public String currentWinner() {
