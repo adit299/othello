@@ -21,10 +21,10 @@ public class VOthello implements Observer{
 				btn.setId(String.valueOf(row) + ',' + String.valueOf(col));
 				buttons.add(btn);
 				if ((row == 3 && col == 3) || (row == 4 && col == 4)) {
-					btn.setText(String.valueOf('X'));
+					btn.setStyle("-fx-background-color:black");
 				}
 				else if ((row == 3 && col == 4) || (row == 4 && col ==3)) {
-					btn.setText(String.valueOf('O'));
+					btn.setStyle("-fx-background-color:white");
 				}
 			}
 		}
@@ -60,11 +60,21 @@ public class VOthello implements Observer{
 			int row = mothello.getStart().charAt(0) - 48;
 			int col = mothello.getStart().charAt(2) - 48;
 			for (Button btn : this.buttons) {
-				if (!btn.getText().isEmpty()){
-					btn.setText(String.valueOf(mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48)));
+				if (!btn.getStyle().equals(null)){
+					if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
+						btn.setStyle("-fx-background-color:black");
+					}
+					else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')) {
+						btn.setStyle("-fx-background-color:white");
+					}		
 				}
 				if (btn.getId().charAt(0)-48 == row && btn.getId().charAt(2)-48 == col) {
-					btn.setText(String.valueOf(mothello.getToken(row, col)));
+					if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
+						btn.setStyle("-fx-background-color:black");
+					}
+					else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')){
+						btn.setStyle("-fx-background-color:white");
+					}
 				}
 			}
 		}
