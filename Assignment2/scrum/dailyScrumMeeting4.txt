@@ -112,14 +112,14 @@ Nov 7,2019
 	Obstacles I face:nothing
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:write tests
+	What I will do today: organize with teamates and decide what to do
+	Obstacles I face: nothing
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: talk with teamates
+	What I will do today: complete userStory 1.10
+	Obstacles I face: many initializations in mothello do not accomadate the existance of using a button at turn 1
 
 Nov 10,2019
 	What I did yesterday:

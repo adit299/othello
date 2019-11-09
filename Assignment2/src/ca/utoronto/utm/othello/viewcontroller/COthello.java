@@ -13,24 +13,27 @@ public class COthello implements EventHandler<ActionEvent>  {
 		this.othello = othello;
 		this.mothello = mothello;
 	}
-	
-	@Override
-	public void handle(ActionEvent event) {
-		int row = ((Button)event.getSource()).getId().charAt(0) - 48;
-		int col = ((Button)event.getSource()).getId().charAt(2) - 48;
-		if (!(this.othello.isGameOver())) {
-			if (((Button)event.getSource()).getParent() instanceof TilePane) {
+
+	public void handle(ActionEvent event) {//
+		String id = ((Button)event.getSource()).getId();
+		if (id.equals("hint")) {
+			if (!(this.othello.isGameOver()) && (this.mothello.hintAvailable())) {
+				mothello.updateHint();
+			}
+		}else if (((Button)event.getSource()).getParent() instanceof TilePane) {
 				mothello.cPlayer(this.othello, ((Button)event.getSource()).getText());
-			}
-			if (this.othello.move(row, col)) {
-				mothello.player(this.othello, ((Button)event.getSource()).getId());
-			}
+		}else {
+			int row = id.charAt(0) - 48;
+			int col = id.charAt(2) - 48;
+			if(this.othello.move(row, col)) {
+				if (!(this.othello.isGameOver())) {
+					mothello.player(this.othello, ((Button)event.getSource()).getId());
+				}
+				else {
+					mothello.gameOver();
+				}
+			}			
 		}
-		else {
-			mothello.gameOver();
-		}
-		
-	}
-	
+	}	
 }
 

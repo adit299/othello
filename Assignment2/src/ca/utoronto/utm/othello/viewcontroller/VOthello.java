@@ -17,6 +17,8 @@ public class VOthello implements Observer{
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
 	private TilePane tile = new TilePane(Orientation.HORIZONTAL);
+	private Button hintButton = new Button("Hint");//
+	private Label hintLabel = new Label("No Hint First turn");//
 	private Label winner = new Label();
 	private Label whosNext = new Label("Current Turn: X");
 	private Label playerCount = new Label("Tokens (P1): 2    Tokens (P2): 2");
@@ -24,6 +26,7 @@ public class VOthello implements Observer{
 	private Label player = new Label("P1: Human    P2: Human");
 	
 	public VOthello() {
+		hintButton.setId("hint");//
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
 				Button btn = new Button();
@@ -54,6 +57,14 @@ public class VOthello implements Observer{
 	public ArrayList<Label> getLabels(){
 		return this.labels;
 	}
+
+	public Button getHintButton() {//
+		return this.hintButton;
+	}
+	
+	public Label getHintLabel() {//
+		return this.hintLabel;
+	}
 	
 	public TilePane getTile() {
 		return this.tile;
@@ -76,6 +87,7 @@ public class VOthello implements Observer{
 			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
 			this.playerCount.setText(mothello.playerCount());
 			this.currentWinner.setText(mothello.currentWinner());
+			this.hintLabel.setText(mothello.getHint());
 			for (Button btn : this.buttons) {
 				if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
 					btn.setStyle("-fx-background-color:black");

@@ -1,4 +1,5 @@
 package ca.utoronto.utm.othello.model;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -17,7 +18,8 @@ import java.util.Random;
  */
 public class Othello {
 	public static final int DIMENSION=8; // This is an 8x8 game
-
+	
+	private Random rand = new Random();//
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
@@ -104,6 +106,20 @@ public class Othello {
 		o.numMoves = this.numMoves;
 		o.whosTurn = this.whosTurn;
 		return o;
+	}
+	
+	public String getHint() {//
+		ArrayList<Move> moves = new ArrayList<Move>();
+		for(int row=0;row<Othello.DIMENSION;row++) {
+			for(int col=0;col<Othello.DIMENSION;col++) {
+				Othello othelloCopy = this.copy();
+				if(othelloCopy.move(row, col))moves.add(new Move(row,col));
+			}
+		}
+		Move move = moves.get(this.rand.nextInt(moves.size()));
+		int x = move.getCol()+1;
+		int y = Othello.DIMENSION-(move.getRow());
+		return "("+x+","+y+")";
 	}
 
 
