@@ -117,9 +117,9 @@ public class Othello {
 			}
 		}
 		Move move = moves.get(this.rand.nextInt(moves.size()));
-		int x = move.getCol()+1;
-		int y = Othello.DIMENSION-(move.getRow());
-		return "("+x+","+y+")";
+		int x = Othello.DIMENSION-move.getCol();
+		int y = (move.getRow())+1;
+		return "("+y+","+x+")";// wack coordinates cause of for loops
 	}
 
 
