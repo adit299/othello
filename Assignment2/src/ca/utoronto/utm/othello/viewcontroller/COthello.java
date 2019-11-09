@@ -27,6 +27,7 @@ public class COthello implements EventHandler<ActionEvent>  {
 			int col = id.charAt(2) - 48;
 			if(this.othello.move(row, col)) {
 				if (!(this.othello.isGameOver())) {
+					mothello.resetHint();
 					mothello.player(this.othello, ((Button)event.getSource()).getId());
 				}
 				else {

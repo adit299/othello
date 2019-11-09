@@ -9,7 +9,7 @@ public class MOthello extends Observable {
 	private String sCoord;
 	private String sText;
 	private boolean change = false;
-	private String hintCoord = "()";
+	private String hintCoord = "";
 	private boolean hintAvailable = false;
 	protected boolean gameOver = false;
 	
@@ -77,6 +77,10 @@ public class MOthello extends Observable {
 	
 	public boolean hintAvailable() {
 		return this.hintAvailable;
+	}
+	
+	public void resetHint() {
+		this.hintCoord = "";
 	}
 	
 	public String currentWinner() {
