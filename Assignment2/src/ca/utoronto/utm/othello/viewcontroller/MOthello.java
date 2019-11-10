@@ -1,13 +1,18 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.util.Observable;
+import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
+import ca.utoronto.utm.othello.model.PlayerGreedy;
+import ca.utoronto.utm.othello.model.PlayerRandom;
 
 public class MOthello extends Observable {
 	
 	private Othello othello;
 	private String sCoord;
 	private String sText;
+	private PlayerGreedy playerGreedy;
+	private PlayerRandom playerRandom;
 	private boolean change = false;
 	private String hintCoord = "()";
 	private boolean hintAvailable = false;
@@ -22,6 +27,15 @@ public class MOthello extends Observable {
 		this.sCoord = sCoord;
 		this.hintAvailable = true;
 		this.notifyObservers();
+	}
+	
+	public Move greedyMove() {
+		return playerGreedy.getMove();
+		
+	}
+	
+	public Move randomMove() {
+		return playerRandom.getMove();
 	}
 	
 	public void cPlayer(Othello othello, String sText) {

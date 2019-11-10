@@ -49,6 +49,11 @@ public class VOthello implements Observer{
 		tile.setHgap(10);
 		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR);
 	}
+	public ArrayList<Button> getPlayerChoiceButtons() {
+		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(HvH, HvR, HvG));
+		return playerChoice;
+	}
+	
 	
 	public ArrayList<Button> getButtons() {
 		return this.buttons;

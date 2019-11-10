@@ -30,6 +30,7 @@ public class OthelloApplication extends Application {
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		COthello cothello=new COthello(mothello, othello);
+		PlayerChangeEventHandler peventhandler = new PlayerChangeEventHandler(); 
 		
 		// VIEW COMPONENTS && VIEW LAYOUT
 		VOthello vothello = new VOthello();
@@ -41,10 +42,19 @@ public class OthelloApplication extends Application {
 		for (Button button : vothello.getButtons()) {
 			grid.add(button, button.getId().charAt(0), button.getId().charAt(2));
 			button.setOnAction(cothello);
-			button.setMinWidth(50);
-			button.setPrefWidth(50);
-			button.setMaxWidth(50);
+			button.setMinHeight(75);
+			button.setPrefHeight(75);
+			button.setMaxHeight(75);
+			button.setMinWidth(75);
+			button.setPrefWidth(75);
+			button.setMaxWidth(75);
 		}
+		
+		for (Button button: vothello.getPlayerChoiceButtons()) {
+			button.setOnAction(peventhandler);
+			
+		}
+		
 		vothello.getHintButton().setOnAction(cothello);
 		
 		//add all labels
