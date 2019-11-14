@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
+import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.OthelloBoard;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -9,6 +11,7 @@ public class COthello implements EventHandler<ActionEvent>  {
 
 	private Othello othello;
 	private MOthello mothello;
+	
 	public COthello(MOthello mothello, Othello othello) {
 		this.othello = othello;
 		this.mothello = mothello;
@@ -22,9 +25,11 @@ public class COthello implements EventHandler<ActionEvent>  {
 			}
 		}else if (((Button)event.getSource()).getParent() instanceof TilePane) {
 				mothello.cPlayer(this.othello, ((Button)event.getSource()).getText());
-		}else {
+		}
+		else {
 			int row = id.charAt(0) - 48;
 			int col = id.charAt(2) - 48;
+			
 			if(this.othello.move(row, col)) {
 				if (!(this.othello.isGameOver())) {
 					mothello.resetHint();
@@ -37,4 +42,5 @@ public class COthello implements EventHandler<ActionEvent>  {
 		}
 	}	
 }
+
 

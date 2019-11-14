@@ -4,10 +4,19 @@ import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.Label;
 import javafx.scene.layout.TilePane;
+import javafx.util.Duration;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Timer;
+
+
 
 public class VOthello implements Observer{
 	
@@ -16,6 +25,10 @@ public class VOthello implements Observer{
 	private Button HvH = new Button("HvH");
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
+	
+	private Label timerLabel = new Label("Time Remaining: 5:00");
+	private CountDownTimer countDowntimer = new CountDownTimer(timerLabel);
+	
 	private TilePane tile = new TilePane(Orientation.HORIZONTAL);
 	private Button hintButton = new Button("Hint");//
 	private Label hintLabel = new Label("No Hint First turn");//
@@ -40,18 +53,37 @@ public class VOthello implements Observer{
 				}
 			}
 		}
-		winner.setId("0,8");
+		timerLabel.setId("0,8");
 		whosNext.setId("0,12");
 		playerCount.setId("0,16");
 		player.setId("0,20");
 		currentWinner.setId("0,24");
-		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player));
-		tile.setHgap(10);
+		winner.setId("0,28");
+		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, timerLabel));
+		tile.setHgap(20);
 		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR);
-	}
-	public ArrayList<Button> getPlayerChoiceButtons() {
-		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(HvH, HvR, HvG));
-		return playerChoice;
+		
+		startTimer();
+
+		}
+		
+		
+		public void startTimer() {
+		    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+		        countDowntimer.run();
+		    }));
+		    timeline.setCycleCount(Animation.INDEFINITE);
+		    timeline.play();
+		}
+				
+	
+//	public ArrayList<Button> getPlayerChoiceButtons() {
+//		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG));
+//		return playerChoice;
+//	}
+	
+	public Button getPlayerChoiceButtons() {
+		return this.HvG;
 	}
 	
 	
@@ -75,9 +107,17 @@ public class VOthello implements Observer{
 		return this.tile;
 	}
 	
+	public void setTimer() {
+		countDowntimer.countDown();
+		timerLabel.setText(countDowntimer.toString());
+	}
+	
+	
 	@Override
 	public void update(Observable o) {
 		MOthello mothello = (MOthello)o;
+		countDowntimer.resetTimer();
+		timerLabel.setText(countDowntimer.toString());
 		if (mothello.getSText() == this.HvH.getText()) {
 			this.player.setText("P1: Human    P2: Human");
 		}

@@ -16,6 +16,7 @@ public class Move {
 		return col;
 	}
 	public String toString() {
-		return "("+this.row+","+this.col+")";
+//		return "("+this.row+","+this.col+")";
+		return this.row+","+this.col;
 	}
 }

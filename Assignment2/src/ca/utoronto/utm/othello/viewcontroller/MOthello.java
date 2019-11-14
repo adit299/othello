@@ -11,8 +11,8 @@ public class MOthello extends Observable {
 	private Othello othello;
 	private String sCoord;
 	private String sText;
-	private PlayerGreedy playerGreedy;
-	private PlayerRandom playerRandom;
+	private PlayerGreedy playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
+	private PlayerRandom playerRandom = new PlayerRandom(othello, OthelloBoard.P2);
 	private boolean change = false;
 	private String hintCoord = "";
 	private boolean hintAvailable = false;
@@ -29,13 +29,9 @@ public class MOthello extends Observable {
 		this.notifyObservers();
 	}
 	
-	public Move greedyMove() {
-		return playerGreedy.getMove();
-		
-	}
-	
-	public Move randomMove() {
-		return playerRandom.getMove();
+	public void move(int row, int col) {
+		this.othello.move(row, col);
+		this.notifyObservers();
 	}
 	
 	public void cPlayer(Othello othello, String sText) {

@@ -25,9 +25,9 @@ This count shows the
 current number of P1 tokens and P2 tokens on the board.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.05 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.05 : UTORID : krish299 STATUS : Complete
 NAME     : Who Won
-OWNER    : 
+OWNER    : Adit
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When users play, the current status of the game is on display, showing the token
