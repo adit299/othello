@@ -1,6 +1,5 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import java.util.TimerTask;
 
 import javafx.scene.control.Label;
 

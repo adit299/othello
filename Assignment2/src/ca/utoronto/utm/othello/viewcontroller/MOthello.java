@@ -94,7 +94,7 @@ public class MOthello extends Observable {
 	}
 	
 	public String currentWinner() {
-		String s = "Current Winner: ";
+		String s = "Current Winner (Game in Progress): ";
 		if (this.othello.getCount(OthelloBoard.P1) > this.othello.getCount(OthelloBoard.P2)) {
 			s += OthelloBoard.P1;
 		}

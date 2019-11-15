@@ -4,5 +4,6 @@ import ca.utoronto.utm.othello.model.Move;
 
 public interface moveStrategy {
 	public Move moveCommand();
+	public String getId();
 	
 }

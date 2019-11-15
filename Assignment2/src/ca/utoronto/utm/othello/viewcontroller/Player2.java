@@ -11,14 +11,20 @@ import javafx.scene.control.Button;
 public class Player2 implements EventHandler<ActionEvent>{
 	private Othello othello;
 	private MOthello mothello;
-	private PlayerGreedy playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
-	public GreedyBehaviour greedyBehaviour = new GreedyBehaviour(mothello, othello);
+	private GreedyBehaviour greedyBehaviour;
+	private RandomBehaviour randomBehaviour;
+	private HumanBehaviour humanBehaviour;
+	
 	moveStrategy strategy;
 	
 	
 	public Player2(MOthello mothello, Othello othello) {
 		this.mothello = mothello;
 		this.othello = othello;
+		greedyBehaviour = new GreedyBehaviour(mothello, othello);
+		randomBehaviour = new RandomBehaviour(mothello, othello);
+		humanBehaviour = new HumanBehaviour();
+		this.strategy = humanBehaviour;
 	}
 
 
@@ -26,20 +32,24 @@ public class Player2 implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent event) {
 		String id = ((Button)event.getSource()).getText();
 		if (id == "HvR") {
-//			RandomBehaviour randomBehaviour = new RandomBehaviour(mothello);
-//			this.strategy = randomBehaviour;
+			this.strategy = randomBehaviour;
+			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+				Move randomMove = this.strategy.moveCommand();
+				this.mothello.move(randomMove.getRow(), randomMove.getCol());
+			}
 		}
 		else if (id == "HvG") {
-//			System.out.println("Clicked");
-//			System.out.println("" + playerGreedy.getMove().getRow() + "," + playerGreedy.getMove().getCol());
 			this.strategy = greedyBehaviour;
-			Move greedyMove = this.strategy.moveCommand();
-			if(this.othello.move(2, 3)) {
-				if(this.mothello.getWhosTurn() == OthelloBoard.P2) {
-					mothello.move(2, 3);
-				}
+			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+				Move greedyMove = this.strategy.moveCommand();
+				this.mothello.move(greedyMove.getRow(), greedyMove.getCol());
 			}
-		}		
-	}
-
+		}
+		else {
+			this.strategy = humanBehaviour;
+		}
+		
+	}		
 }
+
+

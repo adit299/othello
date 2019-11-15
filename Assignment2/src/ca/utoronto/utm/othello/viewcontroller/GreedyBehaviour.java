@@ -9,32 +9,23 @@ import ca.utoronto.utm.util.Observable;
 public class GreedyBehaviour implements moveStrategy {
 	private MOthello mothello;
 	private Othello othello;
-	private PlayerGreedy playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
+	private String id;
+	private PlayerGreedy playerGreedy;
 
 	public GreedyBehaviour(MOthello mothello, Othello othello) {
 		this.mothello = mothello;
 		this.othello = othello;
+		this.id = "AIBehaviour";
+		playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
 	}
 
-	@Override
 	public Move moveCommand() {
-//		Othello othelloCopy = this.othello.copy();
-//		Move bestMove=new Move(0,0);
-//		int bestMoveCount=othelloCopy.getCount(OthelloBoard.P2);;
-//		for(int row=0;row<Othello.DIMENSION;row++) {
-//			for(int col=0;col<Othello.DIMENSION;col++) {
-//				othelloCopy = othello.copy();
-//				if(othelloCopy.move(row, col) && othelloCopy.getCount(OthelloBoard.P2)>bestMoveCount) {
-//					bestMoveCount = othelloCopy.getCount(OthelloBoard.P2);
-//					bestMove = new Move(row,col);
-//					System.out.println(bestMove.toString());
-					Move bestMove = new Move(2, 3);
+		return playerGreedy.getMove();
 		
-//				}
-//			}
-//		}
-		return bestMove;
-		
+	}
+	
+	public String getId() {
+		return this.id;
 	}
 	
 

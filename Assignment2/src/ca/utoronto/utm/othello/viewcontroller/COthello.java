@@ -11,10 +11,12 @@ public class COthello implements EventHandler<ActionEvent>  {
 
 	private Othello othello;
 	private MOthello mothello;
+	private Player2 player2;
 	
-	public COthello(MOthello mothello, Othello othello) {
+	public COthello(MOthello mothello, Othello othello, Player2 player2) {
 		this.othello = othello;
 		this.mothello = mothello;
+		this.player2 = player2;
 	}
 
 	public void handle(ActionEvent event) {//
@@ -34,6 +36,10 @@ public class COthello implements EventHandler<ActionEvent>  {
 				if (!(this.othello.isGameOver())) {
 					mothello.resetHint();
 					mothello.player(this.othello, ((Button)event.getSource()).getId());
+					if (this.player2.strategy.getId() == "AIBehaviour") {
+						Move Player2Move = this.player2.strategy.moveCommand();
+						mothello.move(Player2Move.getRow(), Player2Move.getCol());
+					}
 				}
 				else {
 					mothello.gameOver();

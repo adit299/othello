@@ -28,6 +28,9 @@ public class VOthello implements Observer{
 	
 	private Label timerLabel = new Label("Time Remaining: 5:00");
 	private CountDownTimer countDowntimer = new CountDownTimer(timerLabel);
+	private Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        countDowntimer.run();
+    }));
 	
 	private TilePane tile = new TilePane(Orientation.HORIZONTAL);
 	private Button hintButton = new Button("Hint");//
@@ -58,34 +61,22 @@ public class VOthello implements Observer{
 		playerCount.setId("0,16");
 		player.setId("0,20");
 		currentWinner.setId("0,24");
-		winner.setId("0,28");
+		winner.setId("5,8");
 		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, timerLabel));
-		tile.setHgap(20);
+		tile.setHgap(10);
 		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR);
 		
-		startTimer();
-
-		}
 		
+		this.timeline.setCycleCount(Animation.INDEFINITE);
+		this.timeline.play();
 		
-		public void startTimer() {
-		    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-		        countDowntimer.run();
-		    }));
-		    timeline.setCycleCount(Animation.INDEFINITE);
-		    timeline.play();
 		}
 				
 	
-//	public ArrayList<Button> getPlayerChoiceButtons() {
-//		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG));
-//		return playerChoice;
-//	}
-	
-	public Button getPlayerChoiceButtons() {
-		return this.HvG;
+	public ArrayList<Button> getPlayerChoiceButtons() {
+		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG));
+		return playerChoice;
 	}
-	
 	
 	public ArrayList<Button> getButtons() {
 		return this.buttons;
@@ -116,8 +107,7 @@ public class VOthello implements Observer{
 	@Override
 	public void update(Observable o) {
 		MOthello mothello = (MOthello)o;
-		countDowntimer.resetTimer();
-		timerLabel.setText(countDowntimer.toString());
+		
 		if (mothello.getSText() == this.HvH.getText()) {
 			this.player.setText("P1: Human    P2: Human");
 		}
@@ -129,6 +119,12 @@ public class VOthello implements Observer{
 		}
 		
 		if (!mothello.gameOver && mothello.getChange()) {
+			countDowntimer.resetTimer();
+			timerLabel.setText(countDowntimer.toString());
+			
+			this.timeline.setCycleCount(Animation.INDEFINITE);
+			this.timeline.play();
+			
 			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
 			this.playerCount.setText(mothello.playerCount());
 			this.currentWinner.setText(mothello.currentWinner());
@@ -143,7 +139,9 @@ public class VOthello implements Observer{
 			}
 		}
 		else if (mothello.gameOver) {
+			this.timeline.stop();
 			this.winner.setText("GAME OVER: " + "PLAYER " + mothello.getWin() + " WINS!");
+			this.currentWinner.setText("GAME OVER");
 		}
 	}
 	
