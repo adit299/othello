@@ -6,7 +6,7 @@
 # Sprint 4 Backlog UserStories go below
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.08 : UTORID : krish299 STATUS : InProgress
+TYPE     : USER STORY 1.08 : UTORID : krish299 STATUS : Complete
 NAME     : Opponent Chooser Implementation
 OWNER    : adit
 PRIORITY : 1
