@@ -36,3 +36,20 @@ ISSUE    : When users play, they see a chess like timer for the othello game.
 For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.11 : UTORID : pereval4 STATUS : InProgress
+NAME     : Restart
+OWNER    : Daniel Perevalov
+PRIORITY : 1
+ESTIMATE : 4 hours    ACTUAL :  
+ISSUE    : When a user is playing, they see a button etc. which allows them
+to restart the game. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.12 : UTORID : pereval4 STATUS : InProgress
+NAME     : Undo
+OWNER    : Daniel Perevalov
+PRIORITY : 2
+ESTIMATE : 6 hours   ACTUAL :  
+ISSUE    : A user has the ability to undo the last move or moves.
+--------------------------------------------------------------------------
