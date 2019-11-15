@@ -3,13 +3,11 @@ import ca.utoronto.utm.othello.model.Othello;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 public class OthelloApplication extends Application {
@@ -80,6 +78,7 @@ public class OthelloApplication extends Application {
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		// MODEL->VIEW hookup
+		mothello.attach(othello);
 		mothello.attach(vothello);
 		
 		// LAUNCH THE GUI

@@ -1,5 +1,8 @@
 package ca.utoronto.utm.othello.model;
 import java.util.ArrayList;
+import ca.utoronto.utm.util.Observer;
+import ca.utoronto.utm.othello.viewcontroller.MOthello;
+import ca.utoronto.utm.util.Observable;
 import java.util.Random;
 
 /**
@@ -16,7 +19,7 @@ import java.util.Random;
  * @author arnold
  *
  */
-public class Othello {
+public class Othello implements Observer{
 	public static final int DIMENSION=8; // This is an 8x8 game
 	
 	private Random rand = new Random();//
@@ -31,6 +34,15 @@ public class Othello {
 	 */
 	public char getWhosTurn() {
 		return this.whosTurn;
+	}
+	
+	public void update (Observable o) {
+		MOthello mothello = (MOthello)o;
+		if (mothello.getStart().equals("Restart")){
+			this.board = new OthelloBoard(Othello.DIMENSION);
+			this.whosTurn = OthelloBoard.P1;
+			this.numMoves = 0;
+		}
 	}
 	
 	/**

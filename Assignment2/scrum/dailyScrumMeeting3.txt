@@ -147,9 +147,9 @@ Nov 14,2019
 	Obstacles I face: The command strategy for undo is not very familiar to me. 
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Worked on UserStory 1.11 and 1.12
+	What I will do today: Still working on both stories hoping to finish both today.
+	Obstacles I face: Undo is still a problem. 
 
 Nov 16,2019
 	What I did yesterday:

@@ -25,8 +25,8 @@ public class COthello implements EventHandler<ActionEvent>  {
 			if (!(this.othello.isGameOver()) && (this.mothello.hintAvailable())) {
 				mothello.updateHint();
 			}
-		}else if (((Button)event.getSource()).getParent() instanceof TilePane) {
-				mothello.cPlayer(this.othello, ((Button)event.getSource()).getText());
+		}else if (((Button)event.getSource()).getParent() instanceof TilePane || ((Button)event.getSource()).getText().equals("Restart")) {
+				mothello.player(this.othello, ((Button)event.getSource()).getText());
 		}
 		else {
 			int row = id.charAt(0) - 48;

@@ -14,7 +14,6 @@ import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Timer;
 
 
 
@@ -25,6 +24,7 @@ public class VOthello implements Observer{
 	private Button HvH = new Button("HvH");
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
+	private Button Restart = new Button ("Restart");
 	
 	private Label timerLabel = new Label("Time Remaining: 5:00");
 	private CountDownTimer countDowntimer = new CountDownTimer(timerLabel);
@@ -64,7 +64,7 @@ public class VOthello implements Observer{
 		winner.setId("5,8");
 		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, timerLabel));
 		tile.setHgap(10);
-		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR);
+		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR, this.Restart);
 		
 		
 		this.timeline.setCycleCount(Animation.INDEFINITE);
@@ -108,14 +108,19 @@ public class VOthello implements Observer{
 	public void update(Observable o) {
 		MOthello mothello = (MOthello)o;
 		
-		if (mothello.getSText() == this.HvH.getText()) {
+		if (mothello.getStart().equals(this.HvH.getText())) {
 			this.player.setText("P1: Human    P2: Human");
 		}
-		else if (mothello.getSText() == this.HvG.getText()) {
+		else if (mothello.getStart().equals(this.HvG.getText())) {
 			this.player.setText("P1: Human    P2: Greedy");
 		}
-		else if (mothello.getSText() == this.HvR.getText()) {
+		else if (mothello.getStart().equals(this.HvR.getText())) {
 			this.player.setText("P1: Human    P2: Random");
+		}
+		else if (mothello.getStart().equals(this.Restart.getText())) {
+			for (Button btn : this.buttons) {
+				btn.setStyle(null);
+			}
 		}
 		
 		if (!mothello.gameOver && mothello.getChange()) {

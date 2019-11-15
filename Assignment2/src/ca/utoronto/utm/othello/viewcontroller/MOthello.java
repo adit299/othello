@@ -10,7 +10,6 @@ public class MOthello extends Observable {
 	
 	private Othello othello;
 	private String sCoord;
-	private String sText;
 	private PlayerGreedy playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
 	private PlayerRandom playerRandom = new PlayerRandom(othello, OthelloBoard.P2);
 	private boolean change = false;
@@ -21,22 +20,16 @@ public class MOthello extends Observable {
 	
 	public void player(Othello othello, String sCoord) { 
 		this.othello = othello;
-		if (sCoord != this.sCoord) {
+		if (sCoord.contains(",")) {
 			this.change = true;
+			this.hintAvailable = true;
 		}
 		this.sCoord = sCoord;
-		this.hintAvailable = true;
 		this.notifyObservers();
 	}
 	
 	public void move(int row, int col) {
 		this.othello.move(row, col);
-		this.notifyObservers();
-	}
-	
-	public void cPlayer(Othello othello, String sText) {
-		this.othello = othello;
-		this.sText = sText;
 		this.notifyObservers();
 	}
 	
@@ -51,10 +44,6 @@ public class MOthello extends Observable {
 	
 	public String getStart() {
 		return this.sCoord;
-	}
-	
-	public String getSText() {
-		return this.sText;
 	}
 	
 	public char getWin() {
