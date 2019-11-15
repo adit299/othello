@@ -25,6 +25,7 @@ public class VOthello implements Observer{
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
 	private Button Restart = new Button ("Restart");
+	private Button Undo = new Button ("Undo");
 	
 	private Label timerLabel = new Label("Time Remaining: 5:00");
 	private CountDownTimer countDowntimer = new CountDownTimer(timerLabel);
@@ -64,7 +65,7 @@ public class VOthello implements Observer{
 		winner.setId("5,8");
 		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, timerLabel));
 		tile.setHgap(10);
-		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR, this.Restart);
+		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR, this.Restart, this.Undo);
 		
 		
 		this.timeline.setCycleCount(Animation.INDEFINITE);
@@ -120,6 +121,19 @@ public class VOthello implements Observer{
 		else if (mothello.getStart().equals(this.Restart.getText())) {
 			for (Button btn : this.buttons) {
 				btn.setStyle(null);
+			}
+		}
+		else if (mothello.getStart().equals(this.Undo.getText())) {
+			for (Button btn : this.buttons) {
+				if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
+					btn.setStyle("-fx-background-color:black");
+				}
+				else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')){
+					btn.setStyle("-fx-background-color:white");
+				}
+				else {
+					btn.setStyle(null);
+				}
 			}
 		}
 		

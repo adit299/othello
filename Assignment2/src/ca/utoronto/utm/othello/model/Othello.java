@@ -4,6 +4,7 @@ import ca.utoronto.utm.util.Observer;
 import ca.utoronto.utm.othello.viewcontroller.MOthello;
 import ca.utoronto.utm.util.Observable;
 import java.util.Random;
+import java.util.Stack;
 
 /**
  * Capture an Othello game. This includes an OthelloBoard as well as knowledge
@@ -26,6 +27,7 @@ public class Othello implements Observer{
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	private Stack state = new Stack();
 
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -42,6 +44,13 @@ public class Othello implements Observer{
 			this.board = new OthelloBoard(Othello.DIMENSION);
 			this.whosTurn = OthelloBoard.P1;
 			this.numMoves = 0;
+			this.state.clear();
+		}
+		else if (mothello.getStart().equals("Undo")) {
+			if (!this.state.empty()) {
+				this.whosTurn = (char) this.state.pop();
+				this.board = (OthelloBoard) this.state.pop();
+			}
 		}
 	}
 	
@@ -65,6 +74,8 @@ public class Othello implements Observer{
 	 * @return whether the move was successfully made.
 	 */
 	public boolean move(int row, int col) {
+		this.state.push(this.copy().board);
+		this.state.push(this.whosTurn);
 		if(this.board.move(row, col, this.whosTurn)) {
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
 			char allowedMove = board.hasMove();
@@ -72,6 +83,8 @@ public class Othello implements Observer{
 			this.numMoves++;
 			return true;
 		} else {
+			this.state.pop();
+			this.state.pop();
 			return false;
 		}
 	}
