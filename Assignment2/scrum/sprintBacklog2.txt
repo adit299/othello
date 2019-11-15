@@ -5,7 +5,7 @@
 # Sprint 2 Oct 27-Nov 02, 2019
 # Sprint 2 Backlog UserStories go below
 -------------------------------------------------------------------------
-TYPE     : USER STORY 1.01 : pereval4 : InProgress : 
+TYPE     : USER STORY 1.01 : UTORID : pereval4 : STATUS : Complete
 NAME     : OthelloGUI Click Registration
 OWNER    : Daniel Perevalov
 PRIORITY : 1
@@ -14,3 +14,13 @@ ISSUE    : User can now click on an 8x8 grid of buttons used by the
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.
 -------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.02 : UTORID : pereval4 : STATUS : Complete
+NAME     : Othello Board Human VS Human
+OWNER    : Daniel Perevalov
+PRIORITY : 1
+ESTIMATE : 6 hours    ACTUAL : 3 hours  
+ISSUE    : The users can now use the OthelloGUI created in US1.011 
+for Human vs Human play. The grid buttons simply show X and O text
+labels for the buttons. There is no longer a console display as in 1.011.
+--------------------------------------------------------------------------
