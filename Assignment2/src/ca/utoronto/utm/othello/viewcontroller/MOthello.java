@@ -1,21 +1,17 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.util.Observable;
-import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
-import ca.utoronto.utm.othello.model.PlayerGreedy;
-import ca.utoronto.utm.othello.model.PlayerRandom;
 
 public class MOthello extends Observable {
 	
 	private Othello othello;
 	private String sCoord;
-	private PlayerGreedy playerGreedy = new PlayerGreedy(othello, OthelloBoard.P2);
-	private PlayerRandom playerRandom = new PlayerRandom(othello, OthelloBoard.P2);
 	private boolean change = false;
 	private String hintCoord = "";
 	private boolean hintAvailable = false;
 	protected boolean gameOver = false;
+	private boolean AIC = false;
 	
 	
 	public void player(Othello othello, String sCoord) { 
@@ -31,6 +27,17 @@ public class MOthello extends Observable {
 	public void move(int row, int col) {
 		this.othello.move(row, col);
 		this.notifyObservers();
+	}
+	
+	public void AICheck (String s) {
+		if (!s.equals("H")) {
+			this.AIC = true;
+		}
+		this.notifyObservers();
+	}
+	
+	public boolean getAI() {
+		return this.AIC;
 	}
 	
 	public void gameOver() {

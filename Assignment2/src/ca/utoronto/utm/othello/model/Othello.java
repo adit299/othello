@@ -47,7 +47,13 @@ public class Othello implements Observer{
 			this.state.clear();
 		}
 		else if (mothello.getStart().equals("Undo")) {
-			if (!this.state.empty()) {
+			if (!this.state.empty() && mothello.getAI()) {
+				this.state.pop();
+				this.state.pop();
+				this.whosTurn = (char) this.state.pop();
+				this.board = (OthelloBoard) this.state.pop();
+			}
+			else if (!this.state.empty()) {
 				this.whosTurn = (char) this.state.pop();
 				this.board = (OthelloBoard) this.state.pop();
 			}
