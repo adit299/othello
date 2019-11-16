@@ -122,39 +122,39 @@ Nov 9,2019
 	Obstacles I face: many initializations in mothello do not accomadate the existance of using a button at turn 1
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:complete userStory 1.10
+	What I will do today:begin brainstorming for 1.14 and 1.15
+	Obstacles I face: none
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: mostly thought about solving user stories
+	What I will do today: study for csc236 test
+	Obstacles I face: none
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:study for csc236 test
+	What I will do today:study for csc236 test
+	Obstacles I face: none
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:study for csc236 test
+	What I will do today:write csc236 test
+	Obstacles I face:none
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:write csc236 test
+	What I will do today:nothing
+	Obstacles I face: nothing
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:nothing
+	What I will do today: userstory 1.14
+	Obstacles I face:nothing
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:userstory 1.14
+	What I will do today: userstory 1.15
+	Obstacles I face:the instructions are unclear so i gotta check discussion board
 
 Nov 17,2019
 	What I did yesterday:

@@ -41,25 +41,3 @@ in the old HumanVSHuman game, but the output is still on the console.
 NOTE: Make sure that you are using good MVC principles in implementing this.
 If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY 1.10 : UTORID : STATUS : Completed
-NAME     : AI Hint
-OWNER    : Shane Chen
-PRIORITY : 1
-ESTIMATE : 2 hours    ACTUAL :  4 hours
-ISSUE    : When the user is playing, the current mover can select a gui
-component (click a button etc) and a hint will display. For this user story
-just display the (row, col) of the hint.
-
-NOTE: Add some other user stories (1.101, 1.102, ...) which improve on this,
-For example: 
-1) Instead of displaying the (row,col) how about highlighting the position
-on the board.
-
-2) User can select a menu item/checkbox etc. to have, for example, the greedy hint highlighted
-on the board at all times. 
-
-3) As in 2, but a random hint
-...
-
---------------------------------------------------------------------------

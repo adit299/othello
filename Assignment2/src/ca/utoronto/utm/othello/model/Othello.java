@@ -120,20 +120,26 @@ public class Othello implements Observer{
 		return o;
 	}
 	
-	public String getHint() {//
+	public ArrayList<Move> getPossibleMoves() {
 		ArrayList<Move> moves = new ArrayList<Move>();
 		for(int row=0;row<Othello.DIMENSION;row++) {
 			for(int col=0;col<Othello.DIMENSION;col++) {
 				Othello othelloCopy = this.copy();
-				if(othelloCopy.move(row, col))moves.add(new Move(row,col));
+				if(othelloCopy.move(row, col))
+					moves.add(new Move(row,col));
 			}
 		}
+		return moves;
+	}
+	
+	public String getHint() {//
+		ArrayList<Move> moves = getPossibleMoves();
 		Move move = moves.get(this.rand.nextInt(moves.size()));
 		int x = Othello.DIMENSION-move.getCol();
 		int y = (move.getRow())+1;
 		return "("+y+","+x+")";// wack coordinates cause of for loops
 	}
-
+	
 
 	/**
 	 * 

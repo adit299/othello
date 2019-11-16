@@ -1,5 +1,8 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.util.Observable;
+
+import java.util.ArrayList;
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
@@ -62,6 +65,15 @@ public class MOthello extends Observable {
 		String s = "";
 		s += "Tokens (P1): " + this.othello.getCount(OthelloBoard.P1) + "    " + "Tokens (P2): " + this.othello.getCount(OthelloBoard.P2);
 		return s;
+	}
+	
+	public ArrayList<String> getHighlightBoard() {
+		ArrayList<Move> moves = this.othello.getPossibleMoves();
+		ArrayList<String> coords = new ArrayList<String>();
+		for (Move move : moves) {
+			coords.add(move.getRow()+","+move.getCol());
+		}
+		return coords;
 	}
 	
 	public void updateHint() {//
