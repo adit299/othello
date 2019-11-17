@@ -1,6 +1,5 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
-import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.Label;
@@ -181,7 +180,12 @@ public class VOthello implements Observer{
 				btn.setStyle(null);
 			}
 			this.winner.setText("");
-			this.timeline.play();
+			this.P1countDowntimer.resetTimer();
+			this.P2countDowntimer.resetTimer();
+			this.P1Label.setText("P1 Time Remaining: 5:00");
+			this.P2Label.setText("P2 Time Remaining: 5:00");
+			this.P1timer.stop();
+			this.P2timer.stop();
 			this.currentWinner.setText(mothello.currentWinner());
 		}
 		else if (mothello.getStart().equals(this.Undo.getText())) {
@@ -208,12 +212,11 @@ public class VOthello implements Observer{
 				this.P1timer.play();
 			}
 			
-			
+			ArrayList<String> coord = mothello.getHighlightBoard();
 			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
 			this.playerCount.setText(mothello.playerCount());
 			this.currentWinner.setText(mothello.currentWinner());
 			this.hintLabel.setText(mothello.getHint());
-			ArrayList<String> coord = mothello.getHighlightBoard();
 			for (Button btn : this.buttons) {
 				if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
 					btn.setStyle("-fx-background-color:black");

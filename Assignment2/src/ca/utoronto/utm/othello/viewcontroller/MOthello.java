@@ -35,6 +35,9 @@ public class MOthello extends Observable {
 		if (!s.equals("H")) {
 			this.AIC = true;
 		}
+		else {
+			this.AIC = false;
+		}
 		this.notifyObservers();
 	}
 	
