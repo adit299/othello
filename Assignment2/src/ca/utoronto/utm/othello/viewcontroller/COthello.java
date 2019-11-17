@@ -60,7 +60,7 @@ public class COthello implements EventHandler<ActionEvent> {
 				if (!(this.othello.isGameOver())) {
 					mothello.resetHint();
 					mothello.player(this.othello, ((Button)event.getSource()).getId());
-					Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+					Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
 						makeMove();
 					}));
 					timeline.play();

@@ -27,6 +27,7 @@ public class VOthello implements Observer{
 	private Button HvH = new Button("HvH");
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
+	private Button HvS = new Button("HvS");
 	
 	private Button Restart = new Button ("Restart");
 	private Button Undo = new Button ("Undo");
@@ -90,7 +91,7 @@ public class VOthello implements Observer{
 		
 		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, P1Label, P2Label));
 		tile.setHgap(10);
-		tile.getChildren().addAll(this.submit, this.HvH, this.HvG, this.HvR, this.Restart, this.Undo);
+		tile.getChildren().addAll(this.submit, this.HvH, this.HvG, this.HvR, this.HvS, this.Restart, this.Undo);
 		
 		
 		this.P1timer.setCycleCount(Animation.INDEFINITE);
@@ -99,7 +100,7 @@ public class VOthello implements Observer{
 				
 	
 	public ArrayList<Button> getPlayerChoiceButtons() {
-		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG));
+		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG,this.HvS));
 		return playerChoice;
 	}
 	
@@ -172,6 +173,9 @@ public class VOthello implements Observer{
 		else if (mothello.getStart().equals(this.HvR.getText())) {
 			this.player.setText("P1: Human    P2: Random");
 		}
+		else if (mothello.getStart().equals(this.HvS.getText())) {
+			this.player.setText("P1: Human    P2: Strategic");
+		}
 		else if (mothello.getStart().equals(this.Restart.getText())) {
 			for (Button btn : this.buttons) {
 				btn.setStyle(null);
@@ -216,6 +220,12 @@ public class VOthello implements Observer{
 					btn.setStyle("-fx-background-color:green");
 				}else {
 					btn.setStyle(null);
+				}
+				
+				if (mothello.getWhosTurn() == "P1") {
+					btn.setDisable(false);
+				}else if (mothello.getWhosTurn() == "P2" && mothello.getAI()) {
+					btn.setDisable(true);
 				}
 			}
 		}

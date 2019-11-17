@@ -239,6 +239,22 @@ public class OthelloBoard {
 		}
 		return count;
 	}
+	
+	/**
+	 * 
+	 * @param player P1 or P2
+	 * @return the number of tokens in the middle 4x4 board for player
+	 */
+	public int getMidCount(char player) {
+		int count = 0;
+		for (int row = 2; row < 6; row++) {
+			for (int col = 2; col < 6; col++) {
+				if (board[row][col] == player)
+					count++;
+			}
+		}
+		return count;
+	}
 
 	/**
 	 * @return a string representation of this, just the play area, with no
