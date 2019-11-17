@@ -40,8 +40,8 @@ After a player makes a move the timer switches off for the player and on for the
 TYPE     : USER STORY 1.13 : UTORID : krish299 STATUS : Complete
 NAME     : Animation
 OWNER    : adit
-PRIORITY : 3
-ESTIMATE : 4 hours    ACTUAL : 6 hours  
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL : 3 hours  
 ISSUE    : When a user makes a move, they see an animation associated
 with their placing a piece. 
 --------------------------------------------------------------------------
