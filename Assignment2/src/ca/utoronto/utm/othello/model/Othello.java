@@ -107,6 +107,15 @@ public class Othello implements Observer{
 	public int getCount(char player) {
 		return board.getCount(player);
 	}
+	
+	/**
+	 * 
+	 * @param player P1 or P2
+	 * @return the number of middle 4x4 tokens for player on the board
+	 */
+	public int getMidCount(char player) {
+		return board.getMidCount(player);
+	}
 
 
 	/**

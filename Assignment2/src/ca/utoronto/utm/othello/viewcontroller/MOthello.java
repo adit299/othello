@@ -59,12 +59,23 @@ public class MOthello extends Observable {
 		return this.sCoord;
 	}
 	
-	public char getWin() {
-		return this.othello.getWinner();
+	public String getWin() {
+		if (this.othello.getWinner() == OthelloBoard.P1) {
+			return "P1"; 
+		}
+		else {
+			return "P2";
+		}
 	}
 	
-	public char getWhosTurn() {
-		return this.othello.getWhosTurn();
+	public String getWhosTurn() {
+		if (this.othello.getWhosTurn() == OthelloBoard.P1) {
+			return "P1";
+		}
+		else {
+			return "P2";
+		}
+		
 	}
 	
 	public boolean getChange() {
@@ -107,10 +118,10 @@ public class MOthello extends Observable {
 	public String currentWinner() {
 		String s = "Current Winner (Game in Progress): ";
 		if (this.othello.getCount(OthelloBoard.P1) > this.othello.getCount(OthelloBoard.P2)) {
-			s += OthelloBoard.P1;
+			s += "P1";
 		}
 		else if (this.othello.getCount(OthelloBoard.P1) < this.othello.getCount(OthelloBoard.P2)) {
-			s += OthelloBoard.P2;	
+			s += "P2";	
 		}
 		else {
 			s += "Tie";

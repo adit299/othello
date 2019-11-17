@@ -1,8 +1,10 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.TilePane;
 import javafx.util.Duration;
 import javafx.animation.Animation;
@@ -21,23 +23,42 @@ public class VOthello implements Observer{
 	
 	private ArrayList<Button> buttons = new ArrayList<>();
 	private ArrayList<Label> labels = new ArrayList<>();
+	
 	private Button HvH = new Button("HvH");
 	private Button HvG = new Button("HvG");
 	private Button HvR = new Button("HvR");
+	private Button HvS = new Button("HvS");
+	
 	private Button Restart = new Button ("Restart");
 	private Button Undo = new Button ("Undo");
 	
-	private Label timerLabel = new Label("Time Remaining: 5:00");
-	private CountDownTimer countDowntimer = new CountDownTimer(timerLabel);
-	private Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-        countDowntimer.run();
+	private TextField minutes = new TextField("Enter Minutes here");
+	private TextField seconds = new TextField("Enter Seconds here");
+	private Button submit = new Button ("Set Time");
+	
+	
+	
+	private Label P1Label = new Label("P1 Time Remaining: 5:00");
+	private CountDownTimer P1countDowntimer = new CountDownTimer(P1Label, "P1");
+	private Label P2Label = new Label("P2 Time Remaining: 5:00");
+	private CountDownTimer P2countDowntimer = new CountDownTimer(P2Label, "P2");
+	
+	
+	
+	private Timeline P1timer = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        P1countDowntimer.run();
     }));
+	private Timeline P2timer = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        P2countDowntimer.run();
+    }));
+	
+	
 	
 	private TilePane tile = new TilePane(Orientation.HORIZONTAL);
 	private Button hintButton = new Button("Hint");//
 	private Label hintLabel = new Label("No Hint First turn");//
 	private Label winner = new Label();
-	private Label whosNext = new Label("Current Turn: X");
+	private Label whosNext = new Label("Current Turn: P1");
 	private Label playerCount = new Label("Tokens (P1): 2    Tokens (P2): 2");
 	private Label currentWinner = new Label("Current Winner: Tie");
 	private Label player = new Label("P1: Human    P2: Human");
@@ -57,26 +78,64 @@ public class VOthello implements Observer{
 				}
 			}
 		}
-		timerLabel.setId("0,8");
+		
+		P1Label.setId("0,8");
+		P2Label.setId("0,10");
 		whosNext.setId("0,12");
-		playerCount.setId("0,16");
-		player.setId("0,20");
-		currentWinner.setId("0,24");
+		playerCount.setId("0,14");
+		player.setId("0,16");
+		currentWinner.setId("0,18");
 		winner.setId("5,8");
-		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, timerLabel));
+		minutes.setId("8,8");
+		seconds.setId("9,8");
+		
+		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, P1Label, P2Label));
 		tile.setHgap(10);
-		tile.getChildren().addAll(this.HvH, this.HvG, this.HvR, this.Restart, this.Undo);
+		tile.getChildren().addAll(this.submit, this.HvH, this.HvG, this.HvR, this.HvS, this.Restart, this.Undo);
 		
 		
-		this.timeline.setCycleCount(Animation.INDEFINITE);
-		this.timeline.play();
-		
+		this.P1timer.setCycleCount(Animation.INDEFINITE);
+		this.P2timer.setCycleCount(Animation.INDEFINITE);	
 		}
 				
 	
 	public ArrayList<Button> getPlayerChoiceButtons() {
-		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG));
+		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG,this.HvS));
 		return playerChoice;
+	}
+	
+	public CountDownTimer getCountDownTimerP1() {
+		return this.P1countDowntimer;
+	}
+	
+	public CountDownTimer getCountDownTimerP2() {
+		return this.P2countDowntimer;
+	}
+	
+	public TextField getMinutes() {
+		return this.minutes;
+	}
+	
+	public TextField getSeconds() {
+		return this.seconds;
+	}
+	
+	public Button getSubmitButton() {
+		return this.submit;
+	}
+	
+	public Label getp1Label() {
+		return this.P1Label;
+	}
+	
+	public Label getp2Label() {
+		return this.P2Label;
+	}
+	
+	
+	public ArrayList<TextField> getTimerComponents() {
+		ArrayList<TextField> timerComponents = new ArrayList<TextField>(Arrays.asList(this.minutes, this.seconds));
+		return timerComponents;
 	}
 	
 	public ArrayList<Button> getButtons() {
@@ -99,10 +158,6 @@ public class VOthello implements Observer{
 		return this.tile;
 	}
 	
-	public void setTimer() {
-		countDowntimer.countDown();
-		timerLabel.setText(countDowntimer.toString());
-	}
 	
 	
 	@Override
@@ -117,6 +172,9 @@ public class VOthello implements Observer{
 		}
 		else if (mothello.getStart().equals(this.HvR.getText())) {
 			this.player.setText("P1: Human    P2: Random");
+		}
+		else if (mothello.getStart().equals(this.HvS.getText())) {
+			this.player.setText("P1: Human    P2: Strategic");
 		}
 		else if (mothello.getStart().equals(this.Restart.getText())) {
 			for (Button btn : this.buttons) {
@@ -141,11 +199,15 @@ public class VOthello implements Observer{
 		}
 		
 		if (!mothello.gameOver && mothello.getChange()) {
-			countDowntimer.resetTimer();
-			timerLabel.setText(countDowntimer.toString());
+			if (mothello.getWhosTurn() == "P2") {
+				this.P1timer.stop();
+				this.P2timer.play();
+			}
+			else if (mothello.getWhosTurn() == "P1") {
+				this.P2timer.stop();
+				this.P1timer.play();
+			}
 			
-			this.timeline.setCycleCount(Animation.INDEFINITE);
-			this.timeline.play();
 			
 			this.whosNext.setText("Current Turn: " + String.valueOf(mothello.getWhosTurn()));
 			this.playerCount.setText(mothello.playerCount());
@@ -162,10 +224,17 @@ public class VOthello implements Observer{
 				}else {
 					btn.setStyle(null);
 				}
+				
+				if (mothello.getWhosTurn() == "P1") {
+					btn.setDisable(false);
+				}else if (mothello.getWhosTurn() == "P2" && mothello.getAI()) {
+					btn.setDisable(true);
+				}
 			}
 		}
 		else if (mothello.gameOver) {
-			this.timeline.stop();
+			this.P1timer.stop();
+			this.P2timer.stop();
 			this.winner.setText("GAME OVER: " + "PLAYER " + mothello.getWin() + " WINS!");
 			this.currentWinner.setText("GAME OVER");
 		}

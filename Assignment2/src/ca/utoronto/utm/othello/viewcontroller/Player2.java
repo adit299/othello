@@ -14,7 +14,7 @@ public class Player2 implements EventHandler<ActionEvent>{
 	private GreedyBehaviour greedyBehaviour;
 	private RandomBehaviour randomBehaviour;
 	private HumanBehaviour humanBehaviour;
-	
+	private StrategicBehaviour strategicBehaviour;
 	moveStrategy strategy;
 	
 	
@@ -23,6 +23,7 @@ public class Player2 implements EventHandler<ActionEvent>{
 		this.othello = othello;
 		greedyBehaviour = new GreedyBehaviour(mothello, othello);
 		randomBehaviour = new RandomBehaviour(mothello, othello);
+		strategicBehaviour = new StrategicBehaviour(mothello, othello);
 		humanBehaviour = new HumanBehaviour();
 		this.strategy = humanBehaviour;
 	}
@@ -34,7 +35,7 @@ public class Player2 implements EventHandler<ActionEvent>{
 		if (id == "HvR") {
 			this.strategy = randomBehaviour;
 			mothello.AICheck("AI");
-			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+			if (mothello.getWhosTurn() == "P2") {			
 				Move randomMove = this.strategy.moveCommand();
 				this.mothello.move(randomMove.getRow(), randomMove.getCol());
 			}
@@ -42,9 +43,17 @@ public class Player2 implements EventHandler<ActionEvent>{
 		else if (id == "HvG") {
 			this.strategy = greedyBehaviour;
 			mothello.AICheck("AI");
-			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+			if (mothello.getWhosTurn() == "P2") {
 				Move greedyMove = this.strategy.moveCommand();
 				this.mothello.move(greedyMove.getRow(), greedyMove.getCol());
+			}
+		}
+		else if (id == "HvS") {
+			this.strategy = strategicBehaviour;
+			mothello.AICheck("AI");
+			if (mothello.getWhosTurn() == "P2") {
+				Move strategicMove = this.strategy.moveCommand();
+				this.mothello.move(strategicMove.getRow(), strategicMove.getCol());
 			}
 		}
 		else {
@@ -54,5 +63,6 @@ public class Player2 implements EventHandler<ActionEvent>{
 		
 	}		
 }
+
 
 
