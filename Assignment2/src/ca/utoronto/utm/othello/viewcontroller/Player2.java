@@ -33,14 +33,14 @@ public class Player2 implements EventHandler<ActionEvent>{
 		String id = ((Button)event.getSource()).getText();
 		if (id == "HvR") {
 			this.strategy = randomBehaviour;
-			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+			if (mothello.getWhosTurn() == "P2") {
 				Move randomMove = this.strategy.moveCommand();
 				this.mothello.move(randomMove.getRow(), randomMove.getCol());
 			}
 		}
 		else if (id == "HvG") {
 			this.strategy = greedyBehaviour;
-			if (mothello.getWhosTurn() == OthelloBoard.P2) {
+			if (mothello.getWhosTurn() == "P2") {
 				Move greedyMove = this.strategy.moveCommand();
 				this.mothello.move(greedyMove.getRow(), greedyMove.getCol());
 			}

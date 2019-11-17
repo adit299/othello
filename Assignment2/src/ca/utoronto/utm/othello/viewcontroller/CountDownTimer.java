@@ -3,15 +3,17 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import javafx.scene.control.Label;
 
-public class CountDownTimer {
+public class CountDownTimer{
 	int minutes;
 	int seconds;
 	Label label;
+	private String player;
 	
-	public CountDownTimer(Label l) {
+	public CountDownTimer(Label l, String player) {
 		this.minutes = 5;
 		this.seconds = 0;
 		this.label = l;
+		this.player = player;
 	}
 	
 	public void changeMinutes(int min) {
@@ -56,7 +58,7 @@ public class CountDownTimer {
 			stringSec = stringSec + seconds;
 		}
 		
-		return "Time Remaining: " + stringMin + ":" + stringSec;
+		return player + " " + "Time Remaining: " + stringMin + ":" + stringSec;
 	}
 
 	public void run() {

@@ -1,13 +1,24 @@
 package ca.utoronto.utm.othello.viewcontroller;
+import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Handler;
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.TilePane;
+import javafx.util.Duration;
 
-public class COthello implements EventHandler<ActionEvent>  {
+public class COthello implements EventHandler<ActionEvent> {
 
 	private Othello othello;
 	private MOthello mothello;
@@ -18,6 +29,19 @@ public class COthello implements EventHandler<ActionEvent>  {
 		this.mothello = mothello;
 		this.player2 = player2;
 	}
+	
+	public void makeMove() {
+		if (this.player2.strategy.getId() == "AIBehaviour") {
+			Move Player2Move = this.player2.strategy.moveCommand();
+			if(this.othello.move(Player2Move.getRow(), Player2Move.getCol())) {
+				mothello.move(Player2Move.getRow(), Player2Move.getCol());
+			}
+			else if (this.othello.isGameOver()) {
+				mothello.gameOver();
+			}
+		}
+	}
+	
 
 	public void handle(ActionEvent event) {//
 		String id = ((Button)event.getSource()).getId();
@@ -36,17 +60,20 @@ public class COthello implements EventHandler<ActionEvent>  {
 				if (!(this.othello.isGameOver())) {
 					mothello.resetHint();
 					mothello.player(this.othello, ((Button)event.getSource()).getId());
-					if (this.player2.strategy.getId() == "AIBehaviour") {
-						Move Player2Move = this.player2.strategy.moveCommand();
-						mothello.move(Player2Move.getRow(), Player2Move.getCol());
-					}
+					Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), ev -> {
+						makeMove();
+					}));
+					timeline.play();
+					
 				}
 				else {
+					mothello.player(this.othello, ((Button)event.getSource()).getId());
 					mothello.gameOver();
 				}
-			}			
+				
+			}
 		}
-	}	
+	}
 }
 
 

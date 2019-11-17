@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -30,8 +31,13 @@ public class OthelloApplication extends Application {
 		Player2 player2 = new Player2(mothello, othello);
 		COthello cothello=new COthello(mothello, othello, player2);
 		
+		
 		// VIEW COMPONENTS && VIEW LAYOUT
 		VOthello vothello = new VOthello();
+		
+		TimerButtonEventHandler tbHandler = new TimerButtonEventHandler(vothello.getCountDownTimerP1(), vothello.getCountDownTimerP2(), 
+																		vothello.getMinutes(), vothello.getSeconds(), vothello.getp1Label(),
+																		vothello.getp2Label());
 		
 		GridPane grid = new GridPane();
 		grid.setPadding(new Insets(2,2,2,2));
@@ -47,17 +53,21 @@ public class OthelloApplication extends Application {
 			button.setPrefWidth(70);
 			button.setMaxWidth(70);
 		}
-		
+				
 		for (Button button : vothello.getPlayerChoiceButtons()) {
 			button.setOnAction(player2);
 		}
 		
-		
+		vothello.getSubmitButton().setOnAction(tbHandler);
 		vothello.getHintButton().setOnAction(cothello);
 		
 		//add all labels
 		for (Label label : vothello.getLabels()) {
 			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
+		}
+		
+		for (TextField textfield : vothello.getTimerComponents()) {
+			grid.add(textfield, textfield.getId().charAt(0)-48, Integer.valueOf(textfield.getId().substring(2)));
 		}
 
 		for (Node node : vothello.getTile().getChildren()) {
