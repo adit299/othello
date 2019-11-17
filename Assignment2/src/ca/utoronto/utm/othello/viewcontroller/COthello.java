@@ -36,7 +36,7 @@ public class COthello implements EventHandler<ActionEvent> {
 			if(this.othello.move(Player2Move.getRow(), Player2Move.getCol())) {
 				mothello.move(Player2Move.getRow(), Player2Move.getCol());
 			}
-			else if (this.othello.isGameOver()) {
+			if (this.othello.isGameOver() || this.othello.getPossibleMoves().isEmpty()) {
 				mothello.gameOver();
 			}
 		}

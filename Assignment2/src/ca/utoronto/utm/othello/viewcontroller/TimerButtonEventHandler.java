@@ -13,9 +13,6 @@ public class TimerButtonEventHandler implements EventHandler<ActionEvent> {
 	private Label P2Label = new Label("P2 Time Remaining: ");
 	private CountDownTimer P1countDowntimer;
 	private CountDownTimer P2countDowntimer;
-	
-	
-	
 
 	public TimerButtonEventHandler(CountDownTimer countDownTimerP1, CountDownTimer countDownTimerP2, 
 			TextField minutes, TextField seconds, Label P1Label, Label P2Label) {
@@ -26,9 +23,6 @@ public class TimerButtonEventHandler implements EventHandler<ActionEvent> {
 		this.P1Label = P1Label;
 		this.P2Label = P2Label;
 	}
-
-
-
 
 	@Override
 	public void handle(ActionEvent event) {
