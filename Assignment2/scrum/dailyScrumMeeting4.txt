@@ -157,9 +157,9 @@ Nov 16,2019
 	Obstacles I face:the instructions are unclear so i gotta check discussion board
 
 Nov 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Finished userstory 1.15 and made adjustments to 1.13 as the ai animation had a small bug
+	What I will do today: clean up code and help finish 1.17
+	Obstacles I face: not very certain what visitor is so i will have to read up on that and cooperate with teamates
 
 Nov 18,2019
 	What I did yesterday:

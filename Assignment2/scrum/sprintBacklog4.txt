@@ -93,3 +93,15 @@ ESTIMATE : 2 Hours    ACTUAL :  20 mins
 ISSUE    : When a user is playing, they see the positions that they can
 move highlighted vs the positions they can't move.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.15 : UTORID : chens224 STATUS : Complete
+NAME     : Better strategy
+OWNER    : 
+PRIORITY : 1
+ESTIMATE : (1 hour)    ACTUAL :  1 hour
+ISSUE    : A user can play the following, improved strategy:
+Choose a corner if available,
+otherwise choose a side if available, otherwise choose a space that
+maximizes the players presence in the middle 4 by 4 square of the board,
+otherwise choose the location maximizing the movers presence on the board. 
+--------------------------------------------------------------------------
