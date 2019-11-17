@@ -27,14 +27,23 @@ For this user story, the time is fixed to 5 minutes/player.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.091 : UTORID : krish299 STATUS : InProgress
+TYPE     : USER STORY 1.091 : UTORID : krish299 STATUS : Complete
 NAME     : Othello Timer User Specified Time
 OWNER    : adit
 PRIORITY : 3
-ESTIMATE : 4 hours    ACTUAL :  
+ESTIMATE : 4 hours    ACTUAL : 6 hours  
 ISSUE    : When users play, they see a chess like timer for the othello game. 
 For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.13 : UTORID : krish299 STATUS : Complete
+NAME     : Animation
+OWNER    : adit
+PRIORITY : 3
+ESTIMATE : 4 hours    ACTUAL : 6 hours  
+ISSUE    : When a user makes a move, they see an animation associated
+with their placing a piece. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.10 : UTORID : STATUS : Completed

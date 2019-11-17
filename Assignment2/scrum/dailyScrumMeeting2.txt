@@ -92,69 +92,69 @@ Nov 3,2019
 	Obstacles I face: unresponsive teammates
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: studying for other courses
+	What I will do today: keep working on userstories
+	Obstacles I face: mental retardation
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: study for mat232
+	What I will do today: keep studying for mat232 quiz on wednesday
+	Obstacles I face: Arnold Rosenbloom
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: studied for mat232
+	What I will do today: take the mat232 quiz
+	Obstacles I face: other courses
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finished mat232 quiz
+	What I will do today: keep working on user stories
+	Obstacles I face: im kinda dumb :(
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Studied for mat202, and finished csc236 assignment
+	What I will do today: take the mat202 test
+	Obstacles I face: failing all my midterms because of this stupid assignment
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: cry 
+	What I will do today: cry a little more
+	Obstacles I face: sadness
 
 Nov 10,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: let out emotion
+	What I will do today: buckle up and get back to work
+	Obstacles I face: mental capacity
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+ 	What I did yesterday: studied for csc236 midterm, finished user story with the timer
+	What I will do today: get the controllers working
+	Obstacles I face: extreme sadness
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: kept studying for csc236 made progress on controllers
+	What I will do today: keep studying for that
+	Obstacles I face: Arnold and Ilir double teaming me
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: study for csc236
+	What I will do today: took the csc236 midterm
+	Obstacles I face: this midterm was at 9pm (wth)
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: took csc236 midterm
+	What I will do today: go to larry's office hours
+	Obstacles I face: null pointer exceptions in the controllers
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: went to larry's oh
+	What I will do today: get the controller's working
+	Obstacles I face: life 
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: finished up controllers, and got the timer working
+	What I will do today: get the animation working
+	Obstacles I face: being an idiot
 
 Nov 17,2019
 	What I did yesterday:

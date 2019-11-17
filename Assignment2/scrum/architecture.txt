@@ -5,7 +5,7 @@
 
 # USED 
 Observer/Observable : Created by arnold, to be used by the View to observe the Model.
-
+Strategy: Used by Player2, GreedyBehaviour, HumanBehaviour, and RandomBehaviour
 
 
 # UNUSED
