@@ -29,6 +29,7 @@ public class VOthello implements Observer{
 	private Button HvR = new Button("HvR");
 	
 	private Button Restart = new Button ("Restart");
+	private Button Undo = new Button ("Undo");
 	
 	private TextField minutes = new TextField("Enter Minutes here");
 	private TextField seconds = new TextField("Enter Seconds here");
@@ -86,12 +87,10 @@ public class VOthello implements Observer{
 		winner.setId("5,8");
 		minutes.setId("8,8");
 		seconds.setId("9,8");
-
-		
 		
 		labels.addAll(Arrays.asList(winner, whosNext, playerCount, currentWinner, player, P1Label, P2Label));
 		tile.setHgap(10);
-		tile.getChildren().addAll(this.submit, this.HvH, this.HvG, this.HvR, this.Restart);
+		tile.getChildren().addAll(this.submit, this.HvH, this.HvG, this.HvR, this.Restart, this.Undo);
 		
 		
 		this.P1timer.setCycleCount(Animation.INDEFINITE);
@@ -176,6 +175,19 @@ public class VOthello implements Observer{
 		else if (mothello.getStart().equals(this.Restart.getText())) {
 			for (Button btn : this.buttons) {
 				btn.setStyle(null);
+			}
+		}
+		else if (mothello.getStart().equals(this.Undo.getText())) {
+			for (Button btn : this.buttons) {
+				if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
+					btn.setStyle("-fx-background-color:black");
+				}
+				else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')){
+					btn.setStyle("-fx-background-color:white");
+				}
+				else {
+					btn.setStyle(null);
+				}
 			}
 		}
 		

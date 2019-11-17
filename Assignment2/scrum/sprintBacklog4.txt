@@ -59,20 +59,20 @@ on the board at all times.
 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.11 : UTORID : pereval4 STATUS : InProgress
+TYPE     : USER STORY 1.11 : UTORID : pereval4 STATUS : Complete
 NAME     : Restart
 OWNER    : Daniel Perevalov
 PRIORITY : 1
-ESTIMATE : 4 hours    ACTUAL :  
+ESTIMATE : 4 hours    ACTUAL : 2 hours
 ISSUE    : When a user is playing, they see a button etc. which allows them
 to restart the game. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.12 : UTORID : pereval4 STATUS : InProgress
+TYPE     : USER STORY 1.12 : UTORID : pereval4 STATUS : Complete
 NAME     : Undo
 OWNER    : Daniel Perevalov
 PRIORITY : 2
-ESTIMATE : 6 hours   ACTUAL :  
+ESTIMATE : 6 hours   ACTUAL :  1 hour
 ISSUE    : A user has the ability to undo the last move or moves.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------

@@ -152,9 +152,9 @@ Nov 15,2019
 	Obstacles I face: Undo is still a problem. 
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished UserStory 1.11 and 1.12.
+	What I will do today: Making 1.12 fit the Command strategy.
+	Obstacles I face: Not entirely sure how to implement the Command strategy.
 
 Nov 17,2019
 	What I did yesterday:
