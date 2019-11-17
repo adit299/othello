@@ -37,6 +37,28 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY 1.10 : UTORID : STATUS : Completed
+NAME     : AI Hint
+OWNER    : Shane Chen
+PRIORITY : 1
+ESTIMATE : 2 hours    ACTUAL :  4 hours
+ISSUE    : When the user is playing, the current mover can select a gui
+component (click a button etc) and a hint will display. For this user story
+just display the (row, col) of the hint.
+
+NOTE: Add some other user stories (1.101, 1.102, ...) which improve on this,
+For example: 
+1) Instead of displaying the (row,col) how about highlighting the position
+on the board.
+
+2) User can select a menu item/checkbox etc. to have, for example, the greedy hint highlighted
+on the board at all times. 
+
+3) As in 2, but a random hint
+...
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY 1.11 : UTORID : pereval4 STATUS : Complete
 NAME     : Restart
 OWNER    : Daniel Perevalov
@@ -46,10 +68,19 @@ ISSUE    : When a user is playing, they see a button etc. which allows them
 to restart the game. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.12 : UTORID : pereval4 STATUS : InProgress
+TYPE     : USER STORY 1.12 : UTORID : pereval4 STATUS : Complete
 NAME     : Undo
 OWNER    : Daniel Perevalov
 PRIORITY : 2
-ESTIMATE : 6 hours   ACTUAL :  
+ESTIMATE : 6 hours   ACTUAL :  1 hour
 ISSUE    : A user has the ability to undo the last move or moves.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.14 : UTORID : chens224 STATUS : Complete
+NAME     : Available moves
+OWNER    : 
+PRIORITY : 3
+ESTIMATE : 2 Hours    ACTUAL :  20 mins
+ISSUE    : When a user is playing, they see the positions that they can
+move highlighted vs the positions they can't move.
 --------------------------------------------------------------------------

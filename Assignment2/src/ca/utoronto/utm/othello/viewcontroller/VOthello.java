@@ -148,12 +148,16 @@ public class VOthello implements Observer{
 			this.playerCount.setText(mothello.playerCount());
 			this.currentWinner.setText(mothello.currentWinner());
 			this.hintLabel.setText(mothello.getHint());
+			ArrayList<String> coord = mothello.getHighlightBoard();
 			for (Button btn : this.buttons) {
 				if (mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'X') {
 					btn.setStyle("-fx-background-color:black");
-				}
-				else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')){
+				}else if ((mothello.getToken(btn.getId().charAt(0)-48, btn.getId().charAt(2)-48) == 'O')){
 					btn.setStyle("-fx-background-color:white");
+				}else if (coord.contains((btn.getId().charAt(0)-48)+","+(btn.getId().charAt(2)-48))) {
+					btn.setStyle("-fx-background-color:green");
+				}else {
+					btn.setStyle(null);
 				}
 			}
 		}
