@@ -47,6 +47,10 @@ public class MOthello extends Observable {
 		this.notifyObservers();
 	}
 	
+	public void resetGame() {
+		this.gameOver = false;
+	}
+	
 	public char getToken(int row, int col) {
 		return this.othello.getToken(row, col);
 	}

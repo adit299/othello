@@ -122,6 +122,9 @@ public class VOthello implements Observer{
 			for (Button btn : this.buttons) {
 				btn.setStyle(null);
 			}
+			this.winner.setText("");
+			this.timeline.play();
+			this.currentWinner.setText(mothello.currentWinner());
 		}
 		else if (mothello.getStart().equals(this.Undo.getText())) {
 			for (Button btn : this.buttons) {

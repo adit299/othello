@@ -41,6 +41,9 @@ public class Othello implements Observer{
 	public void update (Observable o) {
 		MOthello mothello = (MOthello)o;
 		if (mothello.getStart().equals("Restart")){
+			if (this.isGameOver()) {
+				mothello.resetGame();
+			}
 			this.board = new OthelloBoard(Othello.DIMENSION);
 			this.whosTurn = OthelloBoard.P1;
 			this.numMoves = 0;
