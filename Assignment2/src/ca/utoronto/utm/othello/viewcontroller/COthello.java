@@ -10,18 +10,39 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.TilePane;
 import javafx.util.Duration;
 
+/**
+ * controller for the othello game, when user interacts with buttons on the window pane
+ * they are all connected to the implemented handle in this class, which update
+ * variables in the MOthello class so that for example, a player makes a move, that move is
+ * sent through MOthello to be processed and turned into a graphical update so the players
+ * turn actually is made
+ */
 public class COthello implements EventHandler<ActionEvent> {
 
 	private Othello othello;
 	private MOthello mothello;
 	private Player2 player2;
 	
+	/**
+	 * constructor for COthello
+	 * @param MOthello, is the attached model so it can update its variables when actions are performed
+	 * @param Othello, the game that COthello will use to make calculations or decisions
+	 * such as whether to continue processing actions when the game is already over
+	 * @param player2 the second players play type, to determine if player 2 is ai or human and if
+	 * actions performed is considered just a player 1 move
+	 */
 	public COthello(MOthello mothello, Othello othello, Player2 player2) {
 		this.othello = othello;
 		this.mothello = mothello;
 		this.player2 = player2;
 	}
 	
+	
+	/**
+	 * this inly applies to player 2, this method is run every time a player
+	 * makes a move to check whether its player 2's turn and whether they
+	 * are an AI so that the ai will autimatically make a move as player 2
+	 */
 	public void makeMove() {
 		if (this.player2.strategy.getId() == "AIBehaviour") {
 			Move Player2Move = this.player2.strategy.moveCommand();
@@ -34,7 +55,10 @@ public class COthello implements EventHandler<ActionEvent> {
 		}
 	}
 	
-
+	/**
+	 * all buttons from VOthello are attached to this method as this is the method that
+	 * allows players to update the game through moves or ai buttons
+	 */
 	public void handle(ActionEvent event) {//
 		String id = ((Button)event.getSource()).getId();
 		if (id.equals("hint")) {
