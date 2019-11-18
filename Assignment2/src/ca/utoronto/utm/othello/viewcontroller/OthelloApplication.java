@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put 
 	//	 --module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
@@ -61,10 +62,6 @@ public class OthelloApplication extends Application {
 		vothello.getSubmitButton().setOnAction(tbHandler);
 		vothello.getHintButton().setOnAction(cothello);
 		
-		//add all labels
-//		for (Label label : timerobserver.getTimerLabels()) {
-//			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
-//		}
 		
 		for (Label label : vothello.getLabels()) {
 			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
@@ -100,6 +97,11 @@ public class OthelloApplication extends Application {
 		stage.show();
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -12,16 +12,29 @@ import javafx.util.Duration;
 
 public class COthello implements EventHandler<ActionEvent> {
 
+	/** The othello. */
 	private Othello othello;
+	
+	/** The mothello. */
 	private MOthello mothello;
+	
+	/** The player 2. */
 	private Player2 player2;
 	
+	/**
+	 * Instantiates a new controller.
+	 *
+	 * @param mothello the mothello
+	 * @param othello the othello
+	 * @param player2 the player 2
+	 */
 	public COthello(MOthello mothello, Othello othello, Player2 player2) {
 		this.othello = othello;
 		this.mothello = mothello;
 		this.player2 = player2;
 	}
 	
+
 	public void makeMove() {
 		if (this.player2.strategy.getId() == "AIBehaviour") {
 			Move Player2Move = this.player2.strategy.moveCommand();
@@ -34,6 +47,7 @@ public class COthello implements EventHandler<ActionEvent> {
 		}
 	}
 	
+
 
 	public void handle(ActionEvent event) {//
 		String id = ((Button)event.getSource()).getId();

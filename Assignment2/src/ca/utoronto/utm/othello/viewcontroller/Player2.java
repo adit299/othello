@@ -8,16 +8,40 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
+
+/**
+ * The Class Player2.
+ */
 public class Player2 implements EventHandler<ActionEvent>{
+	
+	/** The othello. */
 	private Othello othello;
+	
+	/** The mothello. */
 	private MOthello mothello;
+	
+	/** The greedy behaviour. */
 	private GreedyBehaviour greedyBehaviour;
+	
+	/** The random behaviour. */
 	private RandomBehaviour randomBehaviour;
+	
+	/** The human behaviour. */
 	private HumanBehaviour humanBehaviour;
+	
+	/** The strategic behaviour. */
 	private StrategicBehaviour strategicBehaviour;
+	
+	/** The strategy. */
 	moveStrategy strategy;
 	
 	
+	/**
+	 * Instantiates a new player 2.
+	 *
+	 * @param mothello the mothello
+	 * @param othello the othello
+	 */
 	public Player2(MOthello mothello, Othello othello) {
 		this.mothello = mothello;
 		this.othello = othello;
@@ -29,6 +53,11 @@ public class Player2 implements EventHandler<ActionEvent>{
 	}
 
 
+	/**
+	 * Handle.
+	 *
+	 * @param event the event
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		String id = ((Button)event.getSource()).getText();

@@ -18,12 +18,23 @@ import java.util.Stack;
  *
  */
 public class Othello{
+	
+	/** The Constant DIMENSION. */
 	public static final int DIMENSION=8; // This is an 8x8 game
 	
+	/** The rand. */
 	private Random rand = new Random();//
+	
+	/** The board. */
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
+	
+	/** The whos turn. */
 	private char whosTurn = OthelloBoard.P1;
+	
+	/** The num moves. */
 	private int numMoves = 0;
+	
+	/** The state. */
 	private Stack state = new Stack();
 
 	/**
@@ -35,6 +46,11 @@ public class Othello{
 		return this.whosTurn;
 	}
 	
+	/**
+	 * undo the previous move during the game.
+	 *
+	 * @param AIC the aic
+	 */
 	public void undo(boolean AIC) {
 		if (!this.state.empty() && AIC) {
 			this.state.pop();
@@ -48,6 +64,9 @@ public class Othello{
 		}
 	}
 	
+	/**
+	 * restarts the game from the beginning.
+	 */
 	public void restart() {
 		this.board = new OthelloBoard(Othello.DIMENSION);
 		this.whosTurn = OthelloBoard.P1;
@@ -56,9 +75,10 @@ public class Othello{
 	}
 	
 	/**
-	 * 
-	 * @param row 
-	 * @param col
+	 * Gets the token.
+	 *
+	 * @param row the row
+	 * @param col the col
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
@@ -70,9 +90,9 @@ public class Othello{
 	 * Attempt to make a move for P1 or P2 (depending on whos turn it is) at
 	 * position row, col. A side effect of this method is modification of whos turn
 	 * and the move count.
-	 * 
-	 * @param row
-	 * @param col
+	 *
+	 * @param row the row
+	 * @param col the col
 	 * @return whether the move was successfully made.
 	 */
 	public boolean move(int row, int col) {
@@ -95,7 +115,8 @@ public class Othello{
 
 
 	/**
-	 * 
+	 * Gets the count.
+	 *
 	 * @param player P1 or P2
 	 * @return the number of tokens for player on the board
 	 */
@@ -105,7 +126,8 @@ public class Othello{
 	}
 	
 	/**
-	 * 
+	 * Gets the mid count.
+	 *
 	 * @param player P1 or P2
 	 * @return the number of middle 4x4 tokens for player on the board
 	 */
@@ -129,7 +151,8 @@ public class Othello{
 
 
 	/**
-	 * 
+	 * Checks if is game over.
+	 *
 	 * @return whether the game is over (no player can move next)
 	 */
 	public boolean isGameOver() {
@@ -137,7 +160,8 @@ public class Othello{
 	}
 
 	/**
-	 * 
+	 * Copy.
+	 *
 	 * @return a copy of this. The copy can be manipulated without impacting this.
 	 */
 	public Othello copy() {
@@ -148,6 +172,11 @@ public class Othello{
 		return o;
 	}
 	
+	/**
+	 * Gets the possible moves.
+	 *
+	 * @return the possible moves
+	 */
 	public ArrayList<Move> getPossibleMoves() {
 		ArrayList<Move> moves = new ArrayList<Move>();
 		for(int row=0;row<Othello.DIMENSION;row++) {
@@ -160,6 +189,11 @@ public class Othello{
 		return moves;
 	}
 	
+	/**
+	 * Gets the hint.
+	 *
+	 * @return the hint
+	 */
 	public String getHint() {//
 		ArrayList<Move> moves = getPossibleMoves();
 		Move move = moves.get(this.rand.nextInt(moves.size()));
@@ -170,7 +204,8 @@ public class Othello{
 	
 
 	/**
-	 * 
+	 * Gets the board string.
+	 *
 	 * @return a string representation of the board.
 	 */
 	public String getBoardString() {
@@ -182,8 +217,8 @@ public class Othello{
 	/**
 	 * run this to test the current class. We play a completely random game. DO NOT
 	 * MODIFY THIS!! See the assignment page for sample outputs from this.
-	 * 
-	 * @param args
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String [] args) {
 		Random rand = new Random();
