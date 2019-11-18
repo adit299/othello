@@ -157,9 +157,9 @@ Nov 16,2019
 	Obstacles I face: Not entirely sure how to implement the Command strategy.
 
 Nov 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished 1.12 with an augmented Command strategy.
+	What I will do today: Finish 1.17 and 9.99 and get the final product ready.
+	Obstacles I face: Visitor strategy seems daunting.
 
 Nov 18,2019
 	What I did yesterday:

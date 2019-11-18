@@ -105,3 +105,16 @@ otherwise choose a side if available, otherwise choose a space that
 maximizes the players presence in the middle 4 by 4 square of the board,
 otherwise choose the location maximizing the movers presence on the board. 
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.17 : UTORID : pereval4 STATUS : Complete
+NAME     : Use Visitor for Othello board
+OWNER    : Daniel Perevalov
+PRIORITY : (1,2,3)
+ESTIMATE : 6 hours    ACTUAL : 4 hours
+ISSUE    : There is a lot of replicated code in Othello and OthelloBoard, all of
+which visits the board in one of a few different ways. Implement the 
+visitor design pattern on the OthelloBoard and rewrite code using othello
+and othello board to now create visitors and use them as appropriate.
+
+NOTE: Some private methods could be removed as a result of this.
+--------------------------------------------------------------------------
