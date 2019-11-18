@@ -1,5 +1,6 @@
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.util.Observable;
+
 import java.util.ArrayList;
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
@@ -7,6 +8,7 @@ import ca.utoronto.utm.othello.model.OthelloBoard;
 
 public class MOthello extends Observable {
 	
+	private ArrayList<Command> commands = new ArrayList<>();
 	private Othello othello;
 	private String sCoord;
 	private boolean change = false;
@@ -15,6 +17,17 @@ public class MOthello extends Observable {
 	protected boolean gameOver = false;
 	private boolean AIC = false;
 	
+	
+	public void addCommand(Command c) {
+		commands.add(c);
+	}
+	
+	public void operate() {
+		for (Command c : commands) {
+			c.execute();
+		}
+		commands.clear();
+	}
 	
 	public void player(Othello othello, String sCoord) { 
 		this.othello = othello;
@@ -119,7 +132,7 @@ public class MOthello extends Observable {
 	}
 	
 	public String currentWinner() {
-		String s = "Current Winner (Game in Progress): ";
+		String s = "Current Winner: ";
 		if (this.othello.getCount(OthelloBoard.P1) > this.othello.getCount(OthelloBoard.P2)) {
 			s += "P1";
 		}

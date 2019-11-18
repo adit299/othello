@@ -88,7 +88,7 @@ public class OthelloApplication extends Application {
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		// MODEL->VIEW hookup
-		mothello.attach(othello);
+		//mothello.attach(othello);
 		mothello.attach(vothello);
 		
 		// LAUNCH THE GUI

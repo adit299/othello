@@ -14,7 +14,8 @@ package ca.utoronto.utm.othello.model;
  */
 
 
-public class OthelloBoard {
+public class OthelloBoard implements Visitable{
+	
 	public static final char EMPTY = ' ', P1 = 'X', P2 = 'O', BOTH = 'B';
 	private int dim = 8;
 	private char[][] board;
@@ -45,7 +46,27 @@ public class OthelloBoard {
 		}
 		return ob;
 	}
+	
+	public char accept(HMVisitor visitor) {
+		return visitor.visit(this);
+	}
 
+	public char accept(TVisitor visitor, int row, int col) {
+		return visitor.visit(this, row, col);
+	}
+	
+	public boolean accept(MVisitor visitor, int row, int col, char turn) {
+		return visitor.visit(this, row, col, turn);
+	}
+	
+	public int accept(CVisitor visitor, char player) {
+		return visitor.visit(this, player);
+	}
+	
+	public String accept(SVisitor visitor) {
+		return visitor.visit(this);
+	}
+	
 	/**
 	 * 
 	 * @param row starting row, in {0,...,dim-1} (typically {0,...,7})

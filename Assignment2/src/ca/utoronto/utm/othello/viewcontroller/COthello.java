@@ -1,15 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
-import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Handler;
 
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
-import ca.utoronto.utm.othello.model.OthelloBoard;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -49,8 +41,24 @@ public class COthello implements EventHandler<ActionEvent> {
 			if (!(this.othello.isGameOver()) && (this.mothello.hintAvailable())) {
 				mothello.updateHint();
 			}
-		}else if (((Button)event.getSource()).getParent() instanceof TilePane || ((Button)event.getSource()).getText().equals("Restart")) {
-				mothello.player(this.othello, ((Button)event.getSource()).getText());
+		}else if (((Button)event.getSource()).getParent() instanceof TilePane) {
+			String btext = ((Button)event.getSource()).getText();
+			if (btext.equals("HvR") || btext.equals("HvG") || btext.equals("HvH")) {
+				mothello.player(this.othello, btext);
+			}
+			else {
+				if (btext.equals("Undo")) {
+					mothello.addCommand(new UndoCommand(this.othello, mothello.getAI()));   //undo command
+					mothello.operate();
+					mothello.player(this.othello, btext);
+				}
+				else if (btext.equals("Restart")){
+					mothello.resetGame();
+					mothello.addCommand(new RestartCommand(this.othello)); //restart command
+					mothello.operate();
+					mothello.player(this.othello, btext);
+				}
+			}
 		}
 		else {
 			int row = id.charAt(0) - 48;

@@ -6,6 +6,8 @@
 # USED 
 Observer/Observable : Created by arnold, to be used by the View to observe the Model.
 Strategy: Used by Player2, GreedyBehaviour, HumanBehaviour, and RandomBehaviour
+Command: Used by UndoCommand, ResetCommand, and Command, in order to send a specific command to the Othello game from the Model. 
+Visitor: Used by Othello and OthelloBoard in order to decouple them from each other. 
 
 
 # UNUSED

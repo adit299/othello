@@ -1,8 +1,5 @@
 package ca.utoronto.utm.othello.model;
 import java.util.ArrayList;
-import ca.utoronto.utm.util.Observer;
-import ca.utoronto.utm.othello.viewcontroller.MOthello;
-import ca.utoronto.utm.util.Observable;
 import java.util.Random;
 import java.util.Stack;
 
@@ -20,7 +17,7 @@ import java.util.Stack;
  * @author arnold
  *
  */
-public class Othello implements Observer{
+public class Othello{
 	public static final int DIMENSION=8; // This is an 8x8 game
 	
 	private Random rand = new Random();//
@@ -38,29 +35,24 @@ public class Othello implements Observer{
 		return this.whosTurn;
 	}
 	
-	public void update (Observable o) {
-		MOthello mothello = (MOthello)o;
-		if (mothello.getStart().equals("Restart")){
-			if (this.isGameOver()) {
-				mothello.resetGame();
-			}
-			this.board = new OthelloBoard(Othello.DIMENSION);
-			this.whosTurn = OthelloBoard.P1;
-			this.numMoves = 0;
-			this.state.clear();
+	public void undo(boolean AIC) {
+		if (!this.state.empty() && AIC) {
+			this.state.pop();
+			this.state.pop();
+			this.whosTurn = (char) this.state.pop();
+			this.board = (OthelloBoard) this.state.pop();
 		}
-		else if (mothello.getStart().equals("Undo")) {
-			if (!this.state.empty() && mothello.getAI()) {
-				this.state.pop();
-				this.state.pop();
-				this.whosTurn = (char) this.state.pop();
-				this.board = (OthelloBoard) this.state.pop();
-			}
-			else if (!this.state.empty()) {
-				this.whosTurn = (char) this.state.pop();
-				this.board = (OthelloBoard) this.state.pop();
-			}
+		else if (!this.state.empty()) {
+			this.whosTurn = (char) this.state.pop();
+			this.board = (OthelloBoard) this.state.pop();
 		}
+	}
+	
+	public void restart() {
+		this.board = new OthelloBoard(Othello.DIMENSION);
+		this.whosTurn = OthelloBoard.P1;
+		this.numMoves = 0;
+		this.state.clear();
 	}
 	
 	/**
@@ -70,7 +62,8 @@ public class Othello implements Observer{
 	 * @return the token at position row, col.
 	 */
 	public char getToken(int row, int col) {
-		return this.board.get(row, col);
+		TokenVisitor tv = new TokenVisitor();
+		return(this.board.accept(tv, row, col));
 	}
 
 	/**
@@ -85,9 +78,11 @@ public class Othello implements Observer{
 	public boolean move(int row, int col) {
 		this.state.push(this.copy().board);
 		this.state.push(this.whosTurn);
-		if(this.board.move(row, col, this.whosTurn)) {
+		MoveVisitor mv = new MoveVisitor();
+		if (this.board.accept(mv, row, col, this.whosTurn)) {
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
-			char allowedMove = board.hasMove();
+			HasMoveVisitor hmv = new HasMoveVisitor();
+			char allowedMove = this.board.accept(hmv);
 			if(allowedMove!=OthelloBoard.BOTH)this.whosTurn=allowedMove;
 			this.numMoves++;
 			return true;
@@ -105,7 +100,8 @@ public class Othello implements Observer{
 	 * @return the number of tokens for player on the board
 	 */
 	public int getCount(char player) {
-		return board.getCount(player);
+		CountVisitor cv = new CountVisitor();
+		return(this.board.accept(cv, player));
 	}
 	
 	/**
@@ -114,7 +110,8 @@ public class Othello implements Observer{
 	 * @return the number of middle 4x4 tokens for player on the board
 	 */
 	public int getMidCount(char player) {
-		return board.getMidCount(player);
+		MCountVisitor mcv = new MCountVisitor();
+		return(this.board.accept(mcv, player));
 	}
 
 
@@ -177,7 +174,8 @@ public class Othello implements Observer{
 	 * @return a string representation of the board.
 	 */
 	public String getBoardString() {
-		return board.toString()+"\n";
+		StringVisitor sv = new StringVisitor();
+		return(this.board.accept(sv));
 	}
 
 
