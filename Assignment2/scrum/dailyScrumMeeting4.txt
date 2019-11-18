@@ -158,7 +158,7 @@ Nov 16,2019
 
 Nov 17,2019
 	What I did yesterday:Finished userstory 1.15 and made adjustments to 1.13 as the ai animation had a small bug
-	What I will do today: clean up code and help finish 1.17
+	What I will do today: clean up code and help finish 1.17, added javadocs
 	Obstacles I face: not very certain what visitor is so i will have to read up on that and cooperate with teamates
 
 Nov 18,2019

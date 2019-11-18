@@ -11,7 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-
+/**
+ * Othello application is what creates and connects the othello mvc design
+ * this class also takes the button and text field objects from VOthello
+ * to form the content pane and window for user display
+ *
+ */
 public class OthelloApplication extends Application {
 	// REMEMBER: To run this in the lab put 
 	//	 --module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
@@ -19,6 +24,10 @@ public class OthelloApplication extends Application {
 	// You can import the JavaFX.prototype launch configuration and use it as well.
 	
 	@Override
+	/**
+	 * this method constructs all the mvc components of the othello game and attaches them
+	 * it also forms the window and content pane from parts from vothello
+	 */
 	public void start(Stage stage) throws Exception {
 		
 		//GAME
@@ -62,7 +71,7 @@ public class OthelloApplication extends Application {
 		vothello.getSubmitButton().setOnAction(tbHandler);
 		vothello.getHintButton().setOnAction(cothello);
 		
-		
+		//add all labels
 		for (Label label : vothello.getLabels()) {
 			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
 		}

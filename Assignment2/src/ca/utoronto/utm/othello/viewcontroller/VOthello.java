@@ -16,6 +16,14 @@ import javafx.scene.control.Button;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Visual representation of othello game
+ * it creates and 8x8 grid of buttons that the user can press to select where
+ * they want their piece to go in the game
+ * 
+ * also displays game information and human vs ai options
+ *
+ */
 public class VOthello implements Observer{
 	
 	/** The buttons. */
@@ -106,6 +114,9 @@ public class VOthello implements Observer{
 	/**
 	 * Instantiates a new VOthello.
 	 * Creates all of the buttons and labels in the view. 
+	 * Constructs a new VOthello so that it initializes all the buttons
+	 * with values and id's that will allow the controller to pass the id information
+	 * to the model so that the model may determine what to do
 	 */
 	public VOthello() {
 		hintButton.setId("hint");//
@@ -142,11 +153,11 @@ public class VOthello implements Observer{
 		this.P2timer.setCycleCount(Animation.INDEFINITE);	
 		}
 				
-	
 	/**
 	 * Gets the player choice buttons (HvH, HvR, HvG, HvS).
 	 *
-	 * @return the player choice buttons
+	 * @return returns buttons that correspond to what type of ai the player
+	 * 		   wishes to play against
 	 */
 	public ArrayList<Button> getPlayerChoiceButtons() {
 		ArrayList<Button> playerChoice =  new ArrayList<Button>(Arrays.asList(this.HvH, this.HvR, this.HvG,this.HvS));
@@ -275,6 +286,10 @@ public class VOthello implements Observer{
 	
 	
 	@Override
+	/**
+	 * update method from interface observer, when a button is pressed, it triggers an action in COthello
+	 * and notifies VOthello through MOthello to update and change some sort of graphic
+	 */
 	public void update(Observable o) {
 		MOthello mothello = (MOthello)o;
 		

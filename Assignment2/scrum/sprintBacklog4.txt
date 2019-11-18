@@ -123,7 +123,16 @@ TYPE     : BUG 9.99 : UTORID : pereval4 STATUS : Complete
 NAME     : Architecture Document
 OWNER    : Daniel Perevalov
 PRIORITY : 3
-ESTIMATE : 1 hour    ACTUAL : 15 minutes  
+ESTIMATE : 30 minutes    ACTUAL : 10 minutes  
+ISSUE    : Complete architecture.txt outlining any interesting features about
+your design. You should outline which design patterns you used where.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 9.99 : UTORID : krish299 STATUS : Complete
+NAME     : Architecture Document
+OWNER    : adit
+PRIORITY : 2
+ESTIMATE : 5 minutes    ACTUAL : 5 minutes  
 ISSUE    : Complete architecture.txt outlining any interesting features about
 your design. You should outline which design patterns you used where.
 --------------------------------------------------------------------------
