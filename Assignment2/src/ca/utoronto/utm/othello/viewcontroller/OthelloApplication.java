@@ -62,6 +62,10 @@ public class OthelloApplication extends Application {
 		vothello.getHintButton().setOnAction(cothello);
 		
 		//add all labels
+//		for (Label label : timerobserver.getTimerLabels()) {
+//			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
+//		}
+		
 		for (Label label : vothello.getLabels()) {
 			grid.add(label, label.getId().charAt(0)-48, Integer.valueOf(label.getId().substring(2)));
 		}
@@ -90,6 +94,7 @@ public class OthelloApplication extends Application {
 		// MODEL->VIEW hookup
 		//mothello.attach(othello);
 		mothello.attach(vothello);
+		
 		
 		// LAUNCH THE GUI
 		stage.show();
