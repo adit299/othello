@@ -118,3 +118,12 @@ and othello board to now create visitors and use them as appropriate.
 
 NOTE: Some private methods could be removed as a result of this.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 9.99 : UTORID : krish299 STATUS : Complete
+NAME     : Architecture Document
+OWNER    : adit
+PRIORITY : 2
+ESTIMATE : 5 minutes    ACTUAL : 5 minutes  
+ISSUE    : Complete architecture.txt outlining any interesting features about
+your design. You should outline which design patterns you used where.
+--------------------------------------------------------------------------
