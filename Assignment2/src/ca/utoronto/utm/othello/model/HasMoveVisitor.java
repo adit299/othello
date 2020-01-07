@@ -1,17 +1,16 @@
 package ca.utoronto.utm.othello.model;
 
-
-/**
- * The Class HasMoveVisitor.
- */
 public class HasMoveVisitor implements HMVisitor {
-
+	
 	/**
-	 * Visit.
-	 *
-	 * @param ob the ob
-	 * @return the char
+	 * Implementation of visitor to check if any
+	 * moves are available
+	 * 
+	 * 
+	 * 
+	 * @param OthelloBoard
 	 */
+
 	@Override
 	public char visit(OthelloBoard ob) {
 		return ob.hasMove();

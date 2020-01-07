@@ -1,18 +1,16 @@
 package ca.utoronto.utm.othello.model;
 
-
-/**
- * The Class MCountVisitor.
- */
 public class MCountVisitor implements CVisitor {
-
+	
 	/**
-	 * Visit.
-	 *
-	 * @param ob the ob
-	 * @param player the player
-	 * @return the int
+	 * Implementation of visitor to check the 
+	 * number of middle pieces player has
+	 * 
+	 * 
+	 * 
+	 * @param OthelloBoard
 	 */
+
 	@Override
 	public int visit(OthelloBoard ob, char player) {
 		return ob.getMidCount(player);

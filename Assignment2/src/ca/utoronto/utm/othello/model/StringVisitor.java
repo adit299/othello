@@ -1,16 +1,14 @@
 package ca.utoronto.utm.othello.model;
 
-/**
- * The Class StringVisitor.
- */
 public class StringVisitor implements SVisitor {
-
 	/**
-	 * Visit.
-	 *
-	 * @param ob the OthelloBoard
-	 * @return the board in string form
+	 * Implementation of visitor to get the board string
+	 * 
+	 * 
+	 * 
+	 * @param OthelloBoard
 	 */
+
 	@Override
 	public String visit(OthelloBoard ob) {
 		return ob.toString();
